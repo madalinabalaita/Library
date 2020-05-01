@@ -1,0 +1,5 @@
+C:\Users\Madalina\source\repos\Library\LibraryData\bin\Debug\netcoreapp3.1\LibraryData.deps.json
+C:\Users\Madalina\source\repos\Library\LibraryData\bin\Debug\netcoreapp3.1\LibraryData.dll
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.csprojAssemblyReference.cache
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.AssemblyInfoInputs.cache
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.AssemblyInfo.cs
