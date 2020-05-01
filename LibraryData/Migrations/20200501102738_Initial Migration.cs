@@ -14,14 +14,15 @@ namespace LibraryData.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Address = table.Column<string>(nullable: false),
-                    DateOfBirth = table.Column<DateTime>(nullable: false),
                     FirstName = table.Column<string>(maxLength: 30, nullable: false),
                     LastName = table.Column<string>(maxLength: 30, nullable: false),
+                    DateOfBirth = table.Column<DateTime>(nullable: false),
                     Gender = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: false),
+                    PhoneNr = table.Column<string>(nullable: true),
                     HomeLibraryBranchId = table.Column<int>(nullable: true),
                     LibraryCardId = table.Column<int>(nullable: false),
-                    PhoneNr = table.Column<string>(nullable: true)
+                    ImageUrl = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
