@@ -1,10 +1,22 @@
-﻿using System;
+﻿using LibraryData.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LibraryServices
+namespace LibraryData
 {
-    interface iLibraryItem
+   public interface ILibraryItem
     {
+       
+        void Add(LibraryItem newItem);
+        string GetAOD(int id);
+        string GetDeweyNr(int id);
+        string GetType(int id);
+        string GetTitle(int id);
+        string GetISBN(int id);
+        LibraryBranch GetCurrentLocation(int id);
+        IEnumerable<LibraryItem> GetAll();
+        LibraryItem GetById(int id);
+
     }
 }
