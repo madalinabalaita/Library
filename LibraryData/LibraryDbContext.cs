@@ -10,7 +10,6 @@ namespace LibraryData
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Movie> Movies { get; set; }
-        public DbSet<Magazine> Magazines { get; set; }
         public DbSet<Borrow> Borrows { get; set; }
         public DbSet<BorrowHistory> BorrowHistories { get; set; }
        

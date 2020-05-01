@@ -17,4 +17,8 @@
     <ProjectReference Include="..\LibraryData\LibraryData.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\people\" />
+  </ItemGroup>
+
 </Project>

@@ -110,8 +110,11 @@ namespace LibraryData.Migrations
                     b.Property<string>("About")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Adress")
+                    b.Property<string>("Address")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -301,17 +304,6 @@ namespace LibraryData.Migrations
                     b.HasDiscriminator().HasValue("Book");
                 });
 
-            modelBuilder.Entity("LibraryData.Models.Magazine", b =>
-                {
-                    b.HasBaseType("LibraryData.Models.LibraryItem");
-
-                    b.Property<string>("Editor")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue("Magazine");
-                });
-
             modelBuilder.Entity("LibraryData.Models.Movie", b =>
                 {
                     b.HasBaseType("LibraryData.Models.LibraryItem");
@@ -378,7 +370,7 @@ namespace LibraryData.Migrations
             modelBuilder.Entity("LibraryData.Models.Member", b =>
                 {
                     b.HasOne("LibraryData.Models.LibraryBranch", "HomeLibraryBranch")
-                        .WithMany("Mermbers")
+                        .WithMany("Members")
                         .HasForeignKey("HomeLibraryBranchId");
 
                     b.HasOne("LibraryData.Models.LibrarySubscription", "LibrarySubscription")

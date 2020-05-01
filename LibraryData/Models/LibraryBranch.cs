@@ -14,7 +14,7 @@ namespace LibraryData.Models
         public string Name { get; set; }
 
         [Required]
-        public string Adress { get; set; }
+        public string Address { get; set; }
 
         [Required]
         public string PhoneNr { get; set; }
@@ -22,9 +22,9 @@ namespace LibraryData.Models
         public string About { get; set; }
         public DateTime OpenDate { get; set; }
 
-        public virtual IEnumerable<Member> Mermbers { get; set;}
+        public virtual IEnumerable<Member> Members { get; set;}
         public virtual IEnumerable<LibraryItem> LibraryItems { get; set; }
 
-        public string ImageUrl;
+        public string ImageUrl { get; set; }
     }
 }
