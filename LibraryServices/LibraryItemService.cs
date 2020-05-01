@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace LibraryServices
 {
-    class LibraryItemService : ILibraryItem
+    public class LibraryItemService : ILibraryItem
     {
         private LibraryDbContext _context;
         public LibraryItemService(LibraryDbContext context)
