@@ -1,10 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace LibraryData.Models
 {
-    class LibraryBranch
+    public class LibraryBranch
     {
+        public int Id { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        public string Name { get; set; }
+
+        [Required]
+        public string Adress { get; set; }
+
+        [Required]
+        public string PhoneNr { get; set; }
+
+        public string About { get; set; }
+        public DateTime OpenDate { get; set; }
+
+        public virtual IEnumerable<Member> Mermbers { get; set;}
+        public virtual IEnumerable<LibraryItem> LibraryItems { get; set; }
+
+        public string ImageUrl;
     }
 }
