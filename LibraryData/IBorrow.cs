@@ -12,13 +12,17 @@ namespace LibraryData
         Borrow GetById(int borrowId);
         void Add(Borrow newBorrow);
         void BorrowItem(int itemId, int librarySubscriptionId);
-        void ReturnItem(int itemid, int librarySubscriptionId);
-        void PlaceHold(int itemid, int librarySubscriptionId);
+        void ReturnItem(int itemId, int librarySubscriptionId);
+        void PlaceHold(int itemId, int librarySubscriptionId);
         string GetCurrentHoldMemberName(int id);
+        IEnumerable<BorrowHistory> GetBorrowHistory(int id);
         DateTime GetCurrentHoldPlaced(int id);
         IEnumerable<Hold> GetCurrentHolds(int id);
         void MarkLost(int itemId);
         void MarkFound(int itemId);
+
+        Borrow GetLatestBorrow(int itemId);
+        string GetCurrentBorrowMember(int itemId);
 
     }
 }
