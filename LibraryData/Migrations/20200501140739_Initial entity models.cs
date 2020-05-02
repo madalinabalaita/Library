@@ -7,23 +7,7 @@ namespace LibraryData.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "LibraryBranches",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(maxLength: 30, nullable: false),
-                    Address = table.Column<string>(nullable: false),
-                    PhoneNr = table.Column<string>(nullable: false),
-                    About = table.Column<string>(nullable: true),
-                    OpenDate = table.Column<DateTime>(nullable: false),
-                    ImageUrl = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_LibraryBranches", x => x.Id);
-                });
+
 
             migrationBuilder.CreateTable(
                 name: "LibrarySubscriptions",
@@ -53,27 +37,6 @@ namespace LibraryData.Migrations
                     table.PrimaryKey("PK_Statuses", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "ProgramHours",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BranchId = table.Column<int>(nullable: true),
-                    Day = table.Column<int>(nullable: false),
-                    OpenTime = table.Column<int>(nullable: false),
-                    CloseTime = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProgramHours", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProgramHours_LibraryBranches_BranchId",
-                        column: x => x.BranchId,
-                        principalTable: "LibraryBranches",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
 
             migrationBuilder.CreateTable(
                 name: "Members",
@@ -94,12 +57,7 @@ namespace LibraryData.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Members", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Members_LibraryBranches_HomeLibraryBranchId",
-                        column: x => x.HomeLibraryBranchId,
-                        principalTable: "LibraryBranches",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+
                     table.ForeignKey(
                         name: "FK_Members_LibrarySubscriptions_LibrarySubscriptionId",
                         column: x => x.LibrarySubscriptionId,
@@ -130,12 +88,7 @@ namespace LibraryData.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_LibraryItems", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_LibraryItems_LibraryBranches_LocationId",
-                        column: x => x.LocationId,
-                        principalTable: "LibraryBranches",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+
                     table.ForeignKey(
                         name: "FK_LibraryItems_Statuses_StatusId",
                         column: x => x.StatusId,
@@ -267,21 +220,13 @@ namespace LibraryData.Migrations
                 table: "LibraryItems",
                 column: "StatusId");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Members_HomeLibraryBranchId",
-                table: "Members",
-                column: "HomeLibraryBranchId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Members_LibrarySubscriptionId",
                 table: "Members",
                 column: "LibrarySubscriptionId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProgramHours_BranchId",
-                table: "ProgramHours",
-                column: "BranchId");
         }
+
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
@@ -297,8 +242,7 @@ namespace LibraryData.Migrations
             migrationBuilder.DropTable(
                 name: "Members");
 
-            migrationBuilder.DropTable(
-                name: "ProgramHours");
+ 
 
             migrationBuilder.DropTable(
                 name: "LibraryItems");
@@ -306,8 +250,7 @@ namespace LibraryData.Migrations
             migrationBuilder.DropTable(
                 name: "LibrarySubscriptions");
 
-            migrationBuilder.DropTable(
-                name: "LibraryBranches");
+       
 
             migrationBuilder.DropTable(
                 name: "Statuses");

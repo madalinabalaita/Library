@@ -59,7 +59,6 @@ namespace Library.Controllers
                 Status = item.Status.Name,
                 ImageUrl = item.ImageUrl,
                 AOD = _items.GetAOD(id),
-                CurrentLocation = _items.GetCurrentLocation(id).Name,
                 DeweyNr = _items.GetDeweyNr(id),
                 BorrowHistory = __borrow.GetBorrowHistory(id),
                 ISBN = _items.GetISBN(id),
@@ -83,6 +82,11 @@ namespace Library.Controllers
                 IsBorrowed = __borrow.IsBorrowed(id)
             };
             return View(model);
+        }
+        public IActionResult ReturnItem(int id)
+        {
+            __borrow.ReturnItem(id);
+            return RedirectToAction("Detail", new { id = id });
         }
         public IActionResult Hold(int id)
         {
@@ -114,7 +118,7 @@ namespace Library.Controllers
         [HttpPost]
         public IActionResult PlaceBorrow(int itemId,int librarysubscriptionId)
         {
-            __borrow.ReturnItem(itemId, librarysubscriptionId);
+            __borrow.BorrowItem(itemId, librarysubscriptionId);
             return RedirectToAction("Detail", new { id = itemId });
         }
         [HttpPost]

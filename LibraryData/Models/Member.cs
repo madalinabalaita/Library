@@ -15,8 +15,7 @@ namespace LibraryData.Models
         public DateTime DateOfBirth { get; set; }
         public string PhoneNr { get; set; }
 
-        //the library branch he is subscribed at
-        public virtual LibraryBranch HomeLibraryBranch { get; set; }
+       
         //the library subscription
         public virtual LibrarySubscription LibrarySubscription { get; set; }
         public string ImageUrl { get; set; }

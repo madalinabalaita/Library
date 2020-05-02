@@ -12,12 +12,10 @@ namespace LibraryData
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Borrow> Borrows { get; set; }
         public DbSet<BorrowHistory> BorrowHistories { get; set; }
-       
-        public DbSet<LibraryBranch> LibraryBranches { get; set; }
-        
+      
         public DbSet<LibrarySubscription> LibrarySubscriptions { get; set; }
         public DbSet<Member> Members { get; set; }
-        public DbSet<ProgramHours> ProgramHours { get; set; }
+    
         public DbSet<Status> Statuses { get; set; }
         public DbSet<LibraryItem> LibraryItems { get; set; }
         public DbSet<Hold> Holds { get; set; }

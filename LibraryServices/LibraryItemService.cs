@@ -24,8 +24,8 @@ namespace LibraryServices
         public IEnumerable<LibraryItem> GetAll()
         {//when we pull back LibraryItems include the status of the item and its location
             return _context.LibraryItems
-                .Include(item => item.Status)
-                .Include(item=>item.Location);
+                .Include(item => item.Status);
+                
         }
 
         
@@ -33,15 +33,10 @@ namespace LibraryServices
         {
             return _context.LibraryItems
                 .Include(item => item.Status)
-                .Include(item => item.Location)
                 .FirstOrDefault(item => item.Id == id);
         }
 
-        public LibraryBranch GetCurrentLocation(int id)
-        {
-            return _context.LibraryItems
-                .FirstOrDefault(item => item.Id == id).Location;
-        }
+      
 
         public string GetDeweyNr(int id)
         {

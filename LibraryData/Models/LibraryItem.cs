@@ -24,6 +24,6 @@ namespace LibraryData.Models
         public string ImageUrl { get; set; }
 
         public int NrOfCopies { get; set; }
-        public virtual LibraryBranch Location { get; set; }
+      
     }
 }

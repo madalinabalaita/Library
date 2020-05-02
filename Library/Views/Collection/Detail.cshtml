@@ -31,7 +31,7 @@
                 <p id="itemAuthor">@Model.AOD</p>
                 <p id="itemStatus">@Model.Status</p>
                 <p id="itemType">@Model.Type</p>
-                <p id="itemLocation">@Model.CurrentLocation</p>
+                
 
                 @if (Model.Status == "Lost")
                 {
@@ -40,10 +40,10 @@
 
                 }
 
-                @if (Model.Status == "Checked Out")
+                @if (Model.Status == "Borrowed")
                 {
-                    <p id="itemPatron">Checked out By:@Model.MemberName</p>
-                    <p><a class="btn btn-lg btn-success" role="button" asp-controller="Collection" asp-action="CheckIn" asp-route-id="@Model.ItemId">Check In</a></p>
+                    <p id="itemPatron">Borrowed By:@Model.MemberName</p>
+                    <p><a class="btn btn-lg btn-success" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
                     <p><a class="btn btn-lg btn-warning" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
                 }
 
@@ -88,11 +88,11 @@
                     {
                         <tr>
                             <td>@borrow.Borrowed</td>
-                        </tr>
-                        <tr>
+                        
+                        
                             <td>@borrow.Returned</td>
-                        </tr>
-                        <tr>
+                        
+                        
                             <td>@borrow.LibrarySubscription.Id</td>
                         </tr>
                     }
@@ -113,8 +113,7 @@
                 {
                     <tr>
                         <td>@hold.HoldPlaced</td>
-                    </tr>
-                    <tr>
+                   
                         <td>@hold.MemberName</td>
                     </tr>
                 }

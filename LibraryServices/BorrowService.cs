@@ -64,11 +64,14 @@ namespace LibraryServices
             _context.SaveChanges();
         }
 
-        private void UpdateItemStatus(int itemId, string v)
+        private void UpdateItemStatus(int itemId, string newStatus)
         {
-            var item = _context.LibraryItems.FirstOrDefault(i => i.Id == itemId);
+            var item = _context.LibraryItems
+                    .FirstOrDefault(a => a.Id ==itemId);
+
             _context.Update(item);
-            item.Status = _context.Statuses.FirstOrDefault(s => s.Name == "Available");
+            item.Status = _context.Statuses
+                .FirstOrDefault(status => status.Name == newStatus);
         }
 
         private void CloseExistingBorrowHistory(int itemId,DateTime now)
@@ -102,24 +105,32 @@ namespace LibraryServices
         }
 
        
-        public void ReturnItem(int itemId, int librarySubscriptionId)
+        public void ReturnItem(int itemId)
         {
             var now = DateTime.Now;
-            var item = _context.LibraryItems.FirstOrDefault(i=>i.Id == itemId);
-            
-            //remove any existing checkouts on the item
+            var item = _context.LibraryItems
+                .FirstOrDefault(a => a.Id == itemId);
+
+
+            //remocve any existing checkouts on the item
+
             RemoveExistingBorrows(itemId);
             //close any existing checkout history
             CloseExistingBorrowHistory(itemId, now);
-            //look for existing holds
-            var currentHolds = _context.Holds.Include(h => h.LibraryItem).Include(h => h.LibrarySubscription).Where(h => h.LibraryItem.Id == itemId);
-            //checkout the item to the subscription with the earliest hold
+            //look for existing holds on the item
+            var currentHolds = _context.Holds
+                .Include(h => h.LibraryItem)
+                .Include(h => h.LibrarySubscription)
+                .Where(h => h.LibraryItem.Id ==itemId);
+            //if there are holds, checkout on the item to the librarycard with the earliest hold.
             if (currentHolds.Any())
             {
-                BorrowToEarliestHold(itemId, currentHolds);
+               BorrowToEarliestHold(itemId, currentHolds);
+                return;
             }
-            //otherwise ,update the item status to available
+            //otherwise, update the item status to available
             UpdateItemStatus(itemId, "Available");
+
             _context.SaveChanges();
 
         }
@@ -177,7 +188,7 @@ namespace LibraryServices
         {
             var now = DateTime.Now;
 
-            var item = _context.LibraryItems.FirstOrDefault(i => i.Id == itemId);
+            var item = _context.LibraryItems.Include(i=>i.Status).FirstOrDefault(i => i.Id == itemId);
             var subscription = _context.LibrarySubscriptions.FirstOrDefault(s => s.Id == librarySubscriptionId);
             if(item.Status.Name == "Available")
             {
