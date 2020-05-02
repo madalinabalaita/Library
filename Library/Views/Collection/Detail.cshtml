@@ -49,7 +49,7 @@
 
                 @if (Model.Status == "Available")
                 {
-                    <p><a class="btn btn-lg btn-info" role="button" asp-controller="Collection" asp-action="Checkout" asp-route-id="@Model.ItemId">Check Out</a></p>
+                    <p><a class="btn btn-lg btn-info" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
                 }
             </div>
             <div class="col-md-4 topright detailInfo">
