@@ -72,4 +72,53 @@
         </div>
     </div>
 </div>
-
+<div class="row">
+    <div class="col-lg-6">
+        <h4>Borrow History</h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Date Loaned</th>
+                    <th>Date Returned</th>
+                    <th>Card Id</th>
+                </tr>
+            </thead>
+                <tbody>
+                    @foreach (var borrow in @Model.BorrowHistory)
+                    {
+                        <tr>
+                            <td>@borrow.Borrowed</td>
+                        </tr>
+                        <tr>
+                            <td>@borrow.Returned</td>
+                        </tr>
+                        <tr>
+                            <td>@borrow.LibrarySubscription.Id</td>
+                        </tr>
+                    }
+                </tbody>
+        </table>
+    </div>
+    <div class="col=lg=6">
+        <h4>Current Holds</h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Hold Placed</th>
+                    <th>Member</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var hold in @Model.CurrentHolds)
+                {
+                    <tr>
+                        <td>@hold.HoldPlaced</td>
+                    </tr>
+                    <tr>
+                        <td>@hold.MemberName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

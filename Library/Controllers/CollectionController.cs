@@ -11,10 +11,12 @@ namespace Library.Controllers
     public class CollectionController : Controller
     {
         private ILibraryItem _items;
+        private IBorrow __borrow;
 
-        public CollectionController(ILibraryItem items)
+        public CollectionController(ILibraryItem items,IBorrow borrow)
         {
             _items = items;
+            __borrow = borrow;
         }
         public IActionResult Index()
         {
@@ -40,10 +42,16 @@ namespace Library.Controllers
         public IActionResult Detail(int id)
         {
             var item = _items.GetById(id);
+            var currentHolds = __borrow.GetCurrentHolds(id).Select(h => new ItemHoldModel
+            {
+                HoldPlaced=__borrow.GetCurrentHoldPlaced(h.Id).ToString("d"),
+                MemberName=__borrow.GetCurrentHoldMemberName(h.Id)
+            });
             var model = new ItemDetailModel
             {
                 ItemId = id,
                 Title = item.Title,
+                Type = _items.GetType(id),
                 Year = item.Year,
                 Price = item.Price,
                 Status = item.Status.Name,
@@ -51,8 +59,11 @@ namespace Library.Controllers
                 AOD = _items.GetAOD(id),
                 CurrentLocation = _items.GetCurrentLocation(id).Name,
                 DeweyNr = _items.GetDeweyNr(id),
+                BorrowHistory = __borrow.GetBorrowHistory(id),
                 ISBN = _items.GetISBN(id),
-
+                LatestBorrow=__borrow.GetLatestBorrow(id),
+                MemberName=__borrow.GetCurrentBorrowMember(id),
+                CurrentHolds=currentHolds
 
             };
             return View(model);
