@@ -1,9 +1,11 @@
-﻿using Library.Models.Collection;
+﻿using Library.Models.BorrowModel;
+using Library.Models.Collection;
 using LibraryData;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace Library.Controllers
@@ -67,7 +69,59 @@ namespace Library.Controllers
 
             };
             return View(model);
+            
+        }
+        public IActionResult Borrow(int id)
+        {
+            var item = _items.GetById(id);
+            var model = new BorrowModel
+            {
+                ItemId = id,
+                ImageUrl = item.ImageUrl,
+                Title = item.Title,
+                LibrarySubscriptionId = "",
+                IsBorrowed = __borrow.IsBorrowed(id)
+            };
+            return View(model);
+        }
+        public IActionResult Hold(int id)
+        {
+            var item = _items.GetById(id);
+            var model = new BorrowModel
+            {
+                ItemId = id,
+                ImageUrl = item.ImageUrl,
+                Title = item.Title,
+                LibrarySubscriptionId = "",
+                IsBorrowed = __borrow.IsBorrowed(id),
+                HoldCount = __borrow.GetCurrentHolds(id).Count()
+            };
+            return View(model);
         }
 
+        public IActionResult MarkLost(int itemId)
+        {
+            __borrow.MarkLost(itemId);
+            return RedirectToAction("Detail", new { id = itemId });
+
+        }
+        public IActionResult MarkFound(int itemId)
+        {
+            __borrow.MarkFound(itemId);
+            return RedirectToAction("Detail", new { id = itemId });
+
+        }
+        [HttpPost]
+        public IActionResult PlaceBorrow(int itemId,int librarysubscriptionId)
+        {
+            __borrow.ReturnItem(itemId, librarysubscriptionId);
+            return RedirectToAction("Detail", new { id = itemId });
+        }
+        [HttpPost]
+        public IActionResult PlaceHold(int itemId, int librarysubscriptionId)
+        {
+            __borrow.PlaceHold(itemId, librarysubscriptionId);
+            return RedirectToAction("Detail", new { id = itemId });
+        }
     }
 }

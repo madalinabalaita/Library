@@ -145,3 +145,5 @@ C:\Users\Madalina\source\repos\Library\Library\bin\Debug\netcoreapp3.1\zh-Hant\M
 C:\Users\Madalina\source\repos\Library\Library\bin\Debug\netcoreapp3.1\LibraryServices.pdb
 C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Collection\Index.cshtml.g.cs
 C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Collection\Detail.cshtml.g.cs
+C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Collection\Borrow.cshtml.g.cs
+C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Collection\Hold.cshtml.g.cs

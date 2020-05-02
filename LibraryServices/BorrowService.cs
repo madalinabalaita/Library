@@ -167,7 +167,7 @@ namespace LibraryServices
             return now.AddDays(30);
         }
 
-        private bool IsBorrowed(int itemId)
+        public bool IsBorrowed(int itemId)
         {
             var isBorrowed = _context.Borrows.Where(b => b.LibraryItem.Id == itemId).Any();
             return isBorrowed;
@@ -231,5 +231,7 @@ namespace LibraryServices
                  .FirstOrDefault(b => b.LibraryItem.Id == itemId);
             return borrow;
         }
+
+       
     }
 }
