@@ -1,9 +1,9 @@
 ﻿@model Library.Models.Collection.ItemIndexModel
 
     <div id="assets">
-        <h3>Library Catalog</h3>
+        <h3>Library Collection</h3>
         <div id="assetsTable">
-            <table class="table table-condensed" id="catalogIndextable">
+            <table class="table table-condensed" id="collectionIndextable">
                 <thread>
                     <tr bgcolor="#e6b3b3">
                         <th>Image</th>
@@ -17,7 +17,7 @@
                     {
                         <tr class="assetRow" bgcolor="#f6eeee">
                             <td class="">
-                                <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@asset.Id">
+                                <a asp-controller="Collection" asp-action="Detail" asp-route-id="@asset.Id">
                                     <img width="150" height="200" src="@asset.ImageUrl" class="imageCell" />
                                 </a>
                             </td>

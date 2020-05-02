@@ -28,4 +28,9 @@ namespace Library.Models.Collection
         public IEnumerable<ItemHoldModel> CurrentHolds { get; set; }
 
     }
+    public class ItemHoldModel
+    {
+        public string MemberName { get; set; }
+        public string HoldPlaced { get; set; }
+    }
 }

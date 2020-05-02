@@ -54,8 +54,6 @@ namespace Library.Controllers
                 ISBN = _items.GetISBN(id),
 
 
-
-
             };
             return View(model);
         }

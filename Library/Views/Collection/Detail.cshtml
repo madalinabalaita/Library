@@ -1,0 +1,75 @@
+﻿@model Library.Models.Collection.ItemDetailModel
+
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+
+        .topright {
+            position: absolute;
+            top: 10px;
+            right: 1px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<div class="container">
+    <div class="page-header clearfix detailHeading">
+        <h2 class="text-muted">View Library Item</h2>
+    </div>
+
+</div>
+<div class="jumbotron" style="background-color:#f6eeee">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <img class="detailImage" width="250" height="300" src="@Model.ImageUrl" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <p id="itemTitle" style="color:#7d0f42;">@Model.Title</p>
+                <p id="itemAuthor">@Model.AOD</p>
+                <p id="itemStatus">@Model.Status</p>
+                <p id="itemType">@Model.Type</p>
+                <p id="itemLocation">@Model.CurrentLocation</p>
+
+                @if (Model.Status == "Lost")
+                {
+                    <p>This item has been lost. It cannot be checked out.</p>
+                    <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Collection" asp-action="MarkFound" asp-route-id="@Model.ItemId">Mark Item Found</a></p>
+
+                }
+
+                @if (Model.Status == "Checked Out")
+                {
+                    <p id="itemPatron">Checked out By:@Model.MemberName</p>
+                    <p><a class="btn btn-lg btn-success" role="button" asp-controller="Collection" asp-action="CheckIn" asp-route-id="@Model.ItemId">Check In</a></p>
+                    <p><a class="btn btn-lg btn-warning" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
+                }
+
+                @if (Model.Status == "Available")
+                {
+                    <p><a class="btn btn-lg btn-info" role="button" asp-controller="Collection" asp-action="Checkout" asp-route-id="@Model.ItemId">Check Out</a></p>
+                }
+            </div>
+            <div class="col-md-4 topright detailInfo">
+                <table>
+                    <tr>
+                        <td class="itemLabel">ISBN: </td>
+                        <td class="itemValue">@Model.ISBN </td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Dewey Number: </td>
+                        <td class="itemValue">@Model.DeweyNr </td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Price to replace: </td>
+                        <td class="itemValue">@Model.Price </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+

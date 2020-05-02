@@ -144,3 +144,4 @@ C:\Users\Madalina\source\repos\Library\Library\bin\Debug\netcoreapp3.1\zh-Hans\M
 C:\Users\Madalina\source\repos\Library\Library\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Madalina\source\repos\Library\Library\bin\Debug\netcoreapp3.1\LibraryServices.pdb
 C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Collection\Index.cshtml.g.cs
+C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Collection\Detail.cshtml.g.cs
