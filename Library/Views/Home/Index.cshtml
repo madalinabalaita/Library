@@ -1,8 +1,26 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Library";
 }
+<h3>@ViewData["Title"]</h3>
+<style>
+    .container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+<div class="container">
+    <img src="~/images/items/books.jpg" alt="Library" style="width:45%;">
+    <div class="centered">Centered</div>
+</div>
+
+<div class="mdl-grid">
+    
 </div>
