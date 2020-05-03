@@ -35,9 +35,9 @@ namespace Library.Controllers
             return View(model);
         }
 
-        public IActionResult Detail(int memberId)
+        public IActionResult Detail(int id)
         {
-            var member = _member.Get(memberId);
+            var member = _member.Get(id);
             var model = new MemberDetailModel()
             {
                 FirstName = member.FirstName,
@@ -47,9 +47,9 @@ namespace Library.Controllers
                 OverdueFees = member.LibrarySubscription.Fees,
                 LibrarySubscriptionId = member.LibrarySubscription.Id,
                 Phone = member.PhoneNr,
-                ItemsBorrowed = _member.GetBorrows(memberId).ToList() ?? new List<Borrow>(),
-                BorrowHistory = _member.GetBorrowHistory(memberId),
-                Holds = _member.GetHolds(memberId)
+                ItemsBorrowed = _member.GetBorrows(id).ToList() ?? new List<Borrow>(),
+                BorrowHistory = _member.GetBorrowHistory(id),
+                Holds = _member.GetHolds(id)
             };
             return View(model);
         }
