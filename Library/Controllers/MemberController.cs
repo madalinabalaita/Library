@@ -1,4 +1,5 @@
-﻿using LibraryData;
+﻿using Library.Models.MemberModel;
+using LibraryData;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,18 @@ namespace Library.Controllers
             var allMembers = _member.GetAll();
             var memberModels = allMembers.Select(m => new MemberDetailModel
             {
+                Id = m.Id,
+                FirstName=m.FirstName,
+                LastName=m.LastName,
+                LibrarySubscriptionId=m.LibrarySubscription.Id,
+                OverdueFees=m.LibrarySubscription.Fees,
 
-            });
+            }).ToList();
+            var model = new MemberIndexModel()
+            {
+                Members = memberModels
+            };
+            return View(model);
         }
     }
 }
