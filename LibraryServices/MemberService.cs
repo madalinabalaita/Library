@@ -8,7 +8,7 @@ using System.Text;
 
 namespace LibraryServices
 {
-    class MemberService : IMember
+   public class MemberService : IMember
     {
         private LibraryDbContext _context;
         public MemberService(LibraryDbContext context)

@@ -26,6 +26,7 @@ namespace Library
             services.AddSingleton(Configuration);
             services.AddScoped<ILibraryItem, LibraryItemService>();
             services.AddScoped<IBorrow, BorrowService>();
+            services.AddScoped<IMember,MemberService>();
             services.AddDbContext<LibraryDbContext>(a => a.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));
         }
 
