@@ -38,7 +38,7 @@ namespace Library.Controllers
         public IActionResult Detail(int memberId)
         {
             var member = _member.Get(memberId);
-            var model = new MemberDetailModel
+            var model = new MemberDetailModel()
             {
                 FirstName = member.FirstName,
                 LastName = member.LastName,

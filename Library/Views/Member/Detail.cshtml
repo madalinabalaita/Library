@@ -1,0 +1,76 @@
+﻿@model Library.Models.Member.MemberDetailModel
+<div class="container">
+    <div class="card-header clearfix detailHeading">
+        <h2 class="text-muted">Member Info</h2>
+    </div>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <h2>@Model.FirstName @Model.LastName</h2>
+                    <div class="memberContact">
+                        <div id="memberSubscription">Library Subscription ID : @Model.LibrarySubscriptionId</div>
+                        <div id="memberAddress">Address : @Model.Address</div>
+                        <div id="memberPhone">Phone Number : @Model.Phone</div>
+                        <div id="memberSince">Member Since : @Model.MemberSince</div>
+                        @if (@Model.OverdueFees > 0)
+                        {
+                            <div id="memberFees">Current Fees : @Model.OverdueFees €</div>
+                        }
+                        else
+                        {
+                            <div id="memberNoFees">No Fees.</div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4>Items Currently Borrowed</h4>
+                @if (Model.ItemsBorrowed.Any())
+                {
+                    <div id="memberItems">
+                        <ul>
+                            @foreach(var borrowed in Model.ItemsBorrowed)
+                            {
+                                <li>
+                                    @borrowed.LibraryItem.Title -(Library Item ID: @borrowed.LibraryItem.Id)
+                                <ul>
+                                    <li>
+                                        Since:@borrowed.Since
+                                    </li>
+                                    <li>
+                                        Until:@borrowed.Until
+                                    </li>
+                                </ul>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div> No items are currently borrowed.</div>
+                }
+            </div>
+            <div class="col-md-4">
+                <h4>Items Currently On Hold</h4>
+                @if (Model.Holds.Any())
+                {
+                    <div id="memberHolds">
+                        <ul>
+                            @foreach(var hold in Model.Holds)
+                            {
+                                <li>@hold.LibraryItem.Title -Placed @hold.HoldPlaced.ToString("yy-dd-MM - HH:mm")</li>
+
+                            }
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div>No items on hold!</div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
