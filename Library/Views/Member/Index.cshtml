@@ -1,7 +1,42 @@
-﻿
+﻿@model Library.Models.Member.MemberIndexModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Member Index";
 }
 
-<h1>Index</h1>
+<h1>Member Index</h1>
+<div id="memberIndex">
+    <table class="mdl-data-table mdljs-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="memberIndexTable">
+        <thead>
+            <tr>
+                <th>Profile Link</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Library Susbscription ID</th>
+                <th>Overdue Fees</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var member in Model.Members)
+            {
+                <tr class="assetRow" bgcolor="#f6eeee">
+                    <td>
+                        <a asp-controller="Member" asp-action="Detail" asp-route-id="@member.Id">
+                            More about member!
+                        </a>
+                    </td>
+
+                    <td class="">
+                        
+                            <img width="150" height="200" src="@member.ImageUrl" class="imageCell" />
+                        
+                    </td>
+                    <td>@member.FirstName</td>
+                    <td>@member.LastName</td>
+                    <td>@member.LibrarySubscriptionId</td>
+                    <td>@member.OverdueFees</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 

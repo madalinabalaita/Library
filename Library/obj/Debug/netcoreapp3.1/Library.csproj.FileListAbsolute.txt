@@ -146,3 +146,4 @@ C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Collection\Detail.cshtml.g.cs
 C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Collection\Borrow.cshtml.g.cs
 C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Collection\Hold.cshtml.g.cs
+C:\Users\Madalina\source\repos\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Member\Index.cshtml.g.cs

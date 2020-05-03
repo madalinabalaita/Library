@@ -1,4 +1,4 @@
-﻿using Library.Models.MemberModel;
+﻿using Library.Models.Member;
 using LibraryData;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -33,5 +33,7 @@ namespace Library.Controllers
             };
             return View(model);
         }
+
+      
     }
 }
