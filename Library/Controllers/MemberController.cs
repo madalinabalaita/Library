@@ -49,7 +49,9 @@ namespace Library.Controllers
                 Phone = member.PhoneNr,
                 ItemsBorrowed = _member.GetBorrows(id).ToList() ?? new List<Borrow>(),
                 BorrowHistory = _member.GetBorrowHistory(id),
-                Holds = _member.GetHolds(id)
+                Holds = _member.GetHolds(id),
+                Gender = member.Gender,
+                ImageUrl=member.ImageUrl
             };
             return View(model);
         }

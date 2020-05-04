@@ -20,7 +20,7 @@ namespace Library.Models.Member
          * }
          * }
          */
-
+         public string Gender { get; set; }
         public int LibrarySubscriptionId { get; set; }
         public DateTime MemberSince { get; set; }
         public string Phone { get; set; }

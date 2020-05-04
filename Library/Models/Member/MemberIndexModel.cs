@@ -8,5 +8,6 @@ namespace Library.Models.Member
     public class MemberIndexModel
     {
         public IEnumerable<MemberDetailModel> Members { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
