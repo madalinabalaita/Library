@@ -15,12 +15,35 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    
+    .button {
+        background-color: #f4511e;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        opacity: 0.6;
+        transition: 0.3s;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        opacity: 1
+    }
 </style>
+
 <div class="container">
     <img src="~/images/items/books.jpg" alt="Library" style="width:45%;">
     <div class="mdl-card__actions mdl-card--border centered">
-        <a class="mdl-button mdl-button--colored" asp-controller="Collection" asp-action="Index">
-            View Collection
+        <a class="mdl-button mdl-button--colored button" asp-controller="Collection" asp-action="Index">
+            
+                View Collection
+            
         </a>
     </div>
 </div>
@@ -28,8 +51,10 @@
 <div class="container">
     <img src="~/images/people/members.png" alt="Library" style="width:45%;">
     <div class="mdl-card__actions mdl-card--border centered ">
-        <a class="mdl-button mdl-button--colored" asp-controller="Member" asp-action="Index">
-            View Members
+        <a class="mdl-button mdl-button--colored button" asp-controller="Member" asp-action="Index">
+          
+                View Members
+            
         </a>
     </div>
 </div>

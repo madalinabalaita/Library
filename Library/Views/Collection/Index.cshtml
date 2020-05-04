@@ -2,6 +2,7 @@
 
     <div id="assets">
         <h3>Library Collection</h3>
+        <h2>Books</h2>
         <div id="assetsTable">
             <table class="table table-condensed" id="collectionIndextable">
                 <thread>
@@ -14,19 +15,52 @@
                 </thread>
                 <tbody>
                     @foreach (var asset in Model.Items)
-                    {
-                        <tr class="assetRow" bgcolor="#f6eeee">
-                            <td class="">
-                                <a asp-controller="Collection" asp-action="Detail" asp-route-id="@asset.Id">
-                                    <img width="150" height="200" src="@asset.ImageUrl" class="imageCell" />
-                                </a>
-                            </td>
-                            <td class="">@asset.Title</td>
-                            <td class="">@asset.AOD</td>
-                            <td class="">@asset.DeweyNr</td>
+                    {@if (asset.Type == "Book")
+                        {
+                            <tr class="assetRow" bgcolor="#f6eeee">
+                                <td class="">
+                                    <a asp-controller="Collection" asp-action="Detail" asp-route-id="@asset.Id">
+                                        <img width="150" height="200" src="@asset.ImageUrl" class="imageCell" />
+                                    </a>
+                                </td>
+                                <td class="">@asset.Title</td>
+                                <td class="">@asset.AOD</td>
+                                <td class="">@asset.DeweyNr</td>
 
-                        </tr>
-                    }
+                            </tr>
+                        }
+                }
+                </tbody>
+            </table>
+        </div>
+        <h2>Movies</h2>
+        <div id="assetsTable">
+            <table class="table table-condensed" id="collectionIndextable">
+                <thread>
+                    <tr bgcolor="#e6b3b3">
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Author / Director</th>
+                        <th>Number</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    @foreach (var asset in Model.Items)
+                    {@if (asset.Type == "Movie")
+                        {
+                            <tr class="assetRow" bgcolor="#f6eeee">
+                                <td class="">
+                                    <a asp-controller="Collection" asp-action="Detail" asp-route-id="@asset.Id">
+                                        <img width="150" height="200" src="@asset.ImageUrl" class="imageCell" />
+                                    </a>
+                                </td>
+                                <td class="">@asset.Title</td>
+                                <td class="">@asset.AOD</td>
+                                <td class="">@asset.DeweyNr</td>
+
+                            </tr>
+                        }
+                }
                 </tbody>
             </table>
         </div>
