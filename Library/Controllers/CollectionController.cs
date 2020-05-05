@@ -105,7 +105,7 @@ namespace Library.Controllers
             };
             return View(model);
         }
-
+/*
         public IActionResult MarkLost(int itemId)
         {
             __borrow.MarkLost(itemId);
@@ -118,6 +118,7 @@ namespace Library.Controllers
             return RedirectToAction("Detail", new { id = itemId });
 
         }
+        */
         [HttpPost]
         public IActionResult PlaceBorrow(int itemId,int librarysubscriptionId)
         {

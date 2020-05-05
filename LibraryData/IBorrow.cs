@@ -18,8 +18,8 @@ namespace LibraryData
         IEnumerable<BorrowHistory> GetBorrowHistory(int id);
         DateTime GetCurrentHoldPlaced(int id);
         IEnumerable<Hold> GetCurrentHolds(int id);
-        void MarkLost(int itemId);
-        void MarkFound(int itemId);
+       // void MarkLost(int itemId);
+        //void MarkFound(int itemId);
         bool IsBorrowed(int id);
         Borrow GetLatestBorrow(int itemId);
         string GetCurrentBorrowMember(int itemId);

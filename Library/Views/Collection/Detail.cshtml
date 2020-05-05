@@ -10,6 +10,39 @@
             right: 1px;
             font-size: 20px;
         }
+
+        .button {
+            background-color: #900C3F;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button1 {
+            background-color: #581845 ;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            opacity: 1
+        }
     </style>
 </head>
 <div class="container">
@@ -20,7 +53,7 @@
 </div>
 @if (Model.Type == "Book")
 {
-    <div class="jumbotron" style="background-color:#f6eeee">
+    <div class="jumbotron" style="   background-color: #f6eeee">
         <div class="row">
             <div class="col-md-4">
                 <div>
@@ -36,24 +69,22 @@
                     <p id="itemType">@Model.Genre</p>
 
 
-                    @if (Model.Status == "Lost")
-                    {
-                        <p>This item has been lost. It cannot be checked out.</p>
-                        <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Collection" asp-action="MarkFound" asp-route-id="@Model.ItemId">Mark Item Found</a></p>
+                   
 
-                    }
+                        @if (@Model.Status == "Borrowed")
+                        {
+                            <p id="itemPatron">Borrowed By:@Model.MemberName</p>
+                            <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
+                            <p><a class="mdl-button mdl-button--colored button1" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
+                        }
 
-                    @if (Model.Status == "Borrowed")
-                    {
-                        <p id="itemPatron">Borrowed By:@Model.MemberName</p>
-                        <p><a class="btn btn-lg btn-success" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
-                        <p><a class="btn btn-lg btn-warning" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
-                    }
+                        @if (@Model.Status == "Available")
+                        {
+                            <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
+                        }
+                       
+                   
 
-                    @if (Model.Status == "Available")
-                    {
-                        <p><a class="btn btn-lg btn-info" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
-                    }
                 </div>
                 <div class="col-md-4 topright detailInfo">
                     <table>

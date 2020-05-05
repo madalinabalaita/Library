@@ -52,7 +52,7 @@ namespace LibraryServices
         {
             return _context.Holds.Include(h => h.LibraryItem).Where(h => h.LibraryItem.Id== id);
         }
-
+/*
         public void MarkFound(int itemId)
         {
             var now = DateTime.Now;
@@ -63,7 +63,7 @@ namespace LibraryServices
            
             _context.SaveChanges();
         }
-
+*/
         private void UpdateItemStatus(int itemId, string newStatus)
         {
             var item = _context.LibraryItems
@@ -98,12 +98,18 @@ namespace LibraryServices
             }
         }
 
-        public void MarkLost(int itemId)
+       /* public void MarkLost(int id)
         {
-            UpdateItemStatus(itemId, "Lost");
+          
+            var item = _context.LibraryItems
+                   .FirstOrDefault(i => i.Id == id);
+            _context.Update(item);
+
+            item.Status = _context.Statuses.FirstOrDefault(a => a.Name == "Lost");
+
             _context.SaveChanges();
         }
-
+        */
        
         public void ReturnItem(int itemId)
         {
