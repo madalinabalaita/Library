@@ -82,5 +82,10 @@ namespace LibraryServices
                 
         }
 
+        public string GetGenre(int id)
+        {
+            return _context.LibraryItems
+          .FirstOrDefault(item => item.Id == id).Genre;
+        }
     }
 }

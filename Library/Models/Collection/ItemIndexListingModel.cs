@@ -13,7 +13,7 @@ namespace Library.Models.Collection
         //author or director
         public string AOD { get; set; }
          public string Type { get; set; }
-
+        public string Genre { get; set; }
         public string DeweyNr { get; set; }
         public string NrCopies { get; set; }
 

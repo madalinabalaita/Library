@@ -14,5 +14,7 @@ namespace Library.Models.BorrowModel
         public int HoldCount { get; set; }
         public bool IsBorrowed { get; set; }
 
+        public string FullName { get; set; }
+
     }
 }

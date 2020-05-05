@@ -21,7 +21,7 @@ namespace Library.Models.Collection
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public string MemberName { get; set; }
-
+        public string Genre { get; set; }
         public Borrow LatestBorrow { get; set; }
 
         public IEnumerable<BorrowHistory> BorrowHistory { get; set; }

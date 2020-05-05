@@ -18,60 +18,114 @@
     </div>
 
 </div>
-<div class="jumbotron" style="background-color:#f6eeee">
-    <div class="row">
-        <div class="col-md-4">
-            <div>
-                <img class="detailImage" width="250" height="300" src="@Model.ImageUrl" />
+@if (Model.Type == "Book")
+{
+    <div class="jumbotron" style="background-color:#f6eeee">
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <img class="detailImage" width="250" height="300" src="@Model.ImageUrl" />
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div>
-                <p id="itemTitle" style="color:#7d0f42;">@Model.Title</p>
-                <p id="itemAuthor">@Model.AOD</p>
-                <p id="itemStatus">@Model.Status</p>
-                <p id="itemType">@Model.Type</p>
-                
+            <div class="col-md-4">
+                <div>
+                    <p id="itemTitle" style="color:#7d0f42;">@Model.Title</p>
+                    <p id="itemAuthor">@Model.AOD</p>
+                    <p id="itemStatus">@Model.Status</p>
+                    <p id="itemType">@Model.Type</p>
+                    <p id="itemType">@Model.Genre</p>
 
-                @if (Model.Status == "Lost")
-                {
-                    <p>This item has been lost. It cannot be checked out.</p>
-                    <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Collection" asp-action="MarkFound" asp-route-id="@Model.ItemId">Mark Item Found</a></p>
 
-                }
+                    @if (Model.Status == "Lost")
+                    {
+                        <p>This item has been lost. It cannot be checked out.</p>
+                        <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Collection" asp-action="MarkFound" asp-route-id="@Model.ItemId">Mark Item Found</a></p>
 
-                @if (Model.Status == "Borrowed")
-                {
-                    <p id="itemPatron">Borrowed By:@Model.MemberName</p>
-                    <p><a class="btn btn-lg btn-success" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
-                    <p><a class="btn btn-lg btn-warning" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
-                }
+                    }
 
-                @if (Model.Status == "Available")
-                {
-                    <p><a class="btn btn-lg btn-info" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
-                }
-            </div>
-            <div class="col-md-4 topright detailInfo">
-                <table>
-                    <tr>
-                        <td class="itemLabel">ISBN: </td>
-                        <td class="itemValue">@Model.ISBN </td>
-                    </tr>
-                    <tr>
-                        <td class="itemLabel">Dewey Number: </td>
-                        <td class="itemValue">@Model.DeweyNr </td>
-                    </tr>
-                    <tr>
-                        <td class="itemLabel">Price to replace: </td>
-                        <td class="itemValue">@Model.Price  €</td>
-                    </tr>
-                </table>
+                    @if (Model.Status == "Borrowed")
+                    {
+                        <p id="itemPatron">Borrowed By:@Model.MemberName</p>
+                        <p><a class="btn btn-lg btn-success" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
+                        <p><a class="btn btn-lg btn-warning" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
+                    }
 
+                    @if (Model.Status == "Available")
+                    {
+                        <p><a class="btn btn-lg btn-info" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
+                    }
+                </div>
+                <div class="col-md-4 topright detailInfo">
+                    <table>
+                        <tr>
+                            <td class="itemLabel">ISBN: </td>
+                            <td class="itemValue">@Model.ISBN </td>
+                        </tr>
+                        <tr>
+                            <td class="itemLabel">Dewey Number: </td>
+                            <td class="itemValue">@Model.DeweyNr </td>
+                        </tr>
+                        <tr>
+                            <td class="itemLabel">Price to replace: </td>
+                            <td class="itemValue">@Model.Price  €</td>
+                        </tr>
+                    </table>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
+}
+@if (Model.Type == "Movie")
+{
+    <div class="jumbotron" style="background-color:#f6eeee">
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <img class="detailImage" width="250" height="300" src="@Model.ImageUrl" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <p id="itemTitle" style="color:#7d0f42;">@Model.Title</p>
+                    <p id="itemAuthor">@Model.AOD</p>
+                    <p id="itemStatus">@Model.Status</p>
+                    <p id="itemType">@Model.Type</p>
+                    <p id="itemType">@Model.Genre</p>
+
+
+                    @if (Model.Status == "Lost")
+                    {
+                        <p>This item has been lost. It cannot be checked out.</p>
+                        <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Collection" asp-action="MarkFound" asp-route-id="@Model.ItemId">Mark Item Found</a></p>
+
+                    }
+
+                    @if (Model.Status == "Borrowed")
+                    {
+                        <p id="itemPatron">Borrowed By:@Model.MemberName</p>
+                        <p><a class="btn btn-lg btn-success" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
+                        <p><a class="btn btn-lg btn-warning" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
+                    }
+
+                    @if (Model.Status == "Available")
+                    {
+                        <p><a class="btn btn-lg btn-info" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
+                    }
+                </div>
+                <div class="col-md-4 topright detailInfo">
+                    <table>
+                        <tr>
+                            <td class="itemLabel">Price to replace: </td>
+                            <td class="itemValue">@Model.Price  €</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
 <div class="row">
     <div class="col-lg-6">
         <h4>Borrow History</h4>
@@ -81,22 +135,25 @@
                     <th>Date Loaned</th>
                     <th>Date Returned</th>
                     <th>Card Id</th>
+                   
                 </tr>
             </thead>
-                <tbody>
-                    @foreach (var borrow in @Model.BorrowHistory)
-                    {
-                        <tr>
-                            <td>@borrow.Borrowed</td>
-                        
-                        
-                            <td>@borrow.Returned</td>
-                        
-                        
-                            <td>@borrow.LibrarySubscription.Id</td>
-                        </tr>
-                    }
-                </tbody>
+            <tbody>
+                @foreach (var borrow in @Model.BorrowHistory)
+                {
+                <tr>
+                    <td>@borrow.Borrowed</td>
+
+
+                    <td>@borrow.Returned</td>
+
+
+                    <td>@borrow.LibrarySubscription.Id</td>
+                  
+                   
+                </tr>
+                }
+            </tbody>
         </table>
     </div>
     <div class="col=lg=6">
@@ -113,7 +170,7 @@
                 {
                     <tr>
                         <td>@hold.HoldPlaced</td>
-                   
+
                         <td>@hold.MemberName</td>
                     </tr>
                 }

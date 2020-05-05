@@ -31,7 +31,8 @@ namespace Library.Controllers
                     AOD = _items.GetAOD(result.Id),
                     DeweyNr = _items.GetDeweyNr(result.Id),
                     Title = result.Title,
-                    Type = _items.GetType(result.Id)
+                    Type = _items.GetType(result.Id),
+                     Genre = _items.GetGenre(result.Id)
 
                 });
             var model = new ItemIndexModel()
@@ -64,7 +65,9 @@ namespace Library.Controllers
                 ISBN = _items.GetISBN(id),
                 LatestBorrow=__borrow.GetLatestBorrow(id),
                 MemberName=__borrow.GetCurrentBorrowMember(id),
-                CurrentHolds=currentHolds
+                CurrentHolds=currentHolds,
+                Genre=_items.GetGenre(id)
+                
 
             };
             return View(model);
