@@ -45,14 +45,14 @@
         }
     </style>
 </head>
-<div class="container">
+
+@if (Model.Type == "Book")
+{<div class="container">
     <div class="page-header clearfix detailHeading">
-        <h2 class="text-muted">View Library Item</h2>
+        <h2 class="text-muted"><span style="color:#B29B35;">View Book</span></h2>
     </div>
 
 </div>
-@if (Model.Type == "Book")
-{
     <div class="jumbotron" style="   background-color: #f6eeee">
         <div class="row">
             <div class="col-md-4">
@@ -108,7 +108,12 @@
     </div>
 }
 @if (Model.Type == "Movie")
-{
+{<div class="container">
+    <div class="page-header clearfix detailHeading">
+        <h2 class="text-muted"><span style="color:#B29B35;">View Movie</span></h2>
+    </div>
+
+</div>
     <div class="jumbotron" style="background-color:#f6eeee">
         <div class="row">
             <div class="col-md-4">
@@ -158,9 +163,11 @@
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
-                    <th>Date Loaned</th>
-                    <th>Date Returned</th>
-                    <th>Card Id</th>
+                    <th>Date Loaned On</th>
+                    <th>Date Returned On</th>
+                    <th>Must return till</th>
+                    <th>Member Subscription  Id</th>
+                    
                    
                 </tr>
             </thead>
@@ -172,11 +179,11 @@
 
 
                     <td>@borrow.Returned</td>
-
+                    <td>@borrow.Borrowed.AddDays(30) </td>
 
                     <td>@borrow.LibrarySubscription.Id</td>
                   
-                   
+                 
                 </tr>
                 }
             </tbody>
@@ -187,8 +194,8 @@
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
-                    <th>Hold Placed</th>
-                    <th>Member</th>
+                    <th>Hold Placed On</th>
+                    <th>By Member</th>
                 </tr>
             </thead>
             <tbody>
