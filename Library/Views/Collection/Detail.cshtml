@@ -162,29 +162,29 @@
         <h4>Borrow History</h4>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
-                <tr>
+                <tr bgcolor="#e6b3b3">
                     <th>Date Loaned On</th>
                     <th>Date Returned On</th>
                     <th>Must return till</th>
                     <th>Member Subscription  Id</th>
-                    
-                   
+
+
                 </tr>
             </thead>
             <tbody>
                 @foreach (var borrow in @Model.BorrowHistory)
                 {
-                <tr>
-                    <td>@borrow.Borrowed</td>
+                    <tr bgcolor="#f6eeee">
+                        <td>@borrow.Borrowed</td>
 
 
-                    <td>@borrow.Returned</td>
-                    <td>@borrow.Borrowed.AddDays(30) </td>
+                        <td>@borrow.Returned</td>
+                        <td>@borrow.Borrowed.AddDays(30) </td>
 
-                    <td>@borrow.LibrarySubscription.Id</td>
-                  
-                 
-                </tr>
+                        <td>@borrow.LibrarySubscription.Id</td>
+
+
+                    </tr>
                 }
             </tbody>
         </table>
@@ -193,7 +193,7 @@
         <h4>Current Holds</h4>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
-                <tr>
+                <tr bgcolor="#e6b3b3">
                     <th>Hold Placed On</th>
                     <th>By Member</th>
                 </tr>
@@ -201,7 +201,7 @@
             <tbody>
                 @foreach (var hold in @Model.CurrentHolds)
                 {
-                    <tr>
+                    <tr bgcolor="#f6eeee">
                         <td>@hold.HoldPlaced</td>
 
                         <td>@hold.MemberName</td>

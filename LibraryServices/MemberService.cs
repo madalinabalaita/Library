@@ -38,7 +38,7 @@ namespace LibraryServices
         }
 
         public IEnumerable<Borrow> GetBorrows(int memberID)
-        {//Get(memberId).LibrarySubscription.Id?
+        {//Get(memberId).LibrarySubscription.Id
             var subscriptionID = _context.Members.Include(m => m.LibrarySubscription).FirstOrDefault(m => m.Id == memberID).LibrarySubscription.Id;
             return _context.Borrows.Include(b => b.LibrarySubscription).Include(b => b.LibraryItem).Where(b => b.LibrarySubscription.Id == subscriptionID);
         }
