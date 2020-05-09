@@ -19,11 +19,14 @@
         .button:hover {
             opacity: 1
         }
+    p.ex1 {
+        font-size: 40px;
+    }
 </style>
 
 <div class="container">
-    <div class="card-header clearfix detailHeading">
-        <h2>Borrowed Items</h2>
+    <div class="card-header clearfix detailHeading" style="background-color:#e6b3b3">
+        <h2>Borrow an Item</h2>
 
     </div>
 </div>
@@ -32,7 +35,7 @@
     <div class="row">
         <div class="col-md-3">
             <div>
-                <p id="itemTitle">@Model.Title</p>
+                <p class="ex1" id="itemTitle" style="color:#7d0f42;"><span style="font-weight:bold">@Model.Title</span></p>
                 <img class="detailImage" src="@Model.ImageUrl" width="250" height="350" />
             </div>
         </div>
@@ -41,9 +44,10 @@
             {
                 @Html.HiddenFor(i => i.ItemId)
                 <div>
-                    Please insert a Library Subscription ID
-                    @Html.TextBoxFor(i => i.LibrarySubscriptionId)
-                </div>
+                    <span style="font-style:italic">
+                        Please insert a Library Subscription ID</span>
+                        @Html.TextBoxFor(i => i.LibrarySubscriptionId)
+</div>
                 <div>
                     <button type="submit" class="mdl-button mdl-button--colored button">Borrow</button>
                 </div>

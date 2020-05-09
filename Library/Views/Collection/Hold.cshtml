@@ -20,10 +20,13 @@
         .button:hover {
             opacity: 1
         }
+    p.ex1 {
+        font-size: 40px;
+    }
 </style>
 
 <div class="container">
-    <div class="card-header clearfix detailHeading">
+    <div class="card-header clearfix detailHeading" style="background-color:#e6b3b3">
         <h2>Place Hold Item</h2>
 
     </div>
@@ -33,19 +36,20 @@
     <div class="row">
         <div class="col-md-3">
             <div>
-                <p id="itemTitle">@Model.Title</p>
+                <p class="ex1" id="itemTitle" style="color:#7d0f42;"><span style="font-weight:bold">@Model.Title</span></p>
                 <img class="detailImage" width="250" height="350" src="@Model.ImageUrl" />
             </div>
         </div>
         <div class="col-md-9">
-            <p>There are currently @Model.HoldCount holds in the queue for this item.</p>
+            <p style="color:#000066;"><span style="font-weight:bold">There are currently @Model.HoldCount holds in the queue for this item.</span></p>
             @using (Html.BeginForm("PlaceHold", "Collection", FormMethod.Post))
             {
                 @Html.HiddenFor(i => i.ItemId)
                 <div>
-                    Please insert a Library Subscription ID
-                    @Html.TextBoxFor(i => i.LibrarySubscriptionId)
-                </div>
+                    <span style="font-style:italic">
+                        Please insert a Library Subscription ID</span>
+                        @Html.TextBoxFor(i => i.LibrarySubscriptionId)
+</div>
                 <div>
                     <button type="submit" class="mdl-button mdl-button--colored button">Hold</button>
                 </div>
