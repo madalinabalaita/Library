@@ -15,6 +15,7 @@ namespace LibraryData
         string GetTitle(int id);
         string GetISBN(int id);
         string GetGenre(int id);
+        string GetDuration(int id);
         IEnumerable<LibraryItem> GetAll();
         LibraryItem GetById(int id);
 

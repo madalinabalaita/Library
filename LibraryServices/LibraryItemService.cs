@@ -87,5 +87,10 @@ namespace LibraryServices
             return _context.LibraryItems
           .FirstOrDefault(item => item.Id == id).Genre;
         }
+        public string GetDuration(int id)
+        {
+            return _context.LibraryItems
+          .FirstOrDefault(item => item.Id == id).Duration;
+        }
     }
 }

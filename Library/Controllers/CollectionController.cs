@@ -66,7 +66,8 @@ namespace Library.Controllers
                 LatestBorrow=__borrow.GetLatestBorrow(id),
                 MemberName=__borrow.GetCurrentBorrowMember(id),
                 CurrentHolds=currentHolds,
-                Genre=_items.GetGenre(id)
+                Genre=_items.GetGenre(id),
+                Duration=_items.GetDuration(id)
                 
 
             };

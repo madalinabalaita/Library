@@ -26,5 +26,6 @@ namespace LibraryData.Models
         public int NrOfCopies { get; set; }
       
         public string Genre { get; set; }
+        public string Duration { get; set; }
     }
 }

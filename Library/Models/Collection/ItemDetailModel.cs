@@ -22,6 +22,7 @@ namespace Library.Models.Collection
         public string ImageUrl { get; set; }
         public string MemberName { get; set; }
         public string Genre { get; set; }
+        public string Duration { get; set; }
         public Borrow LatestBorrow { get; set; }
 
         public IEnumerable<BorrowHistory> BorrowHistory { get; set; }
