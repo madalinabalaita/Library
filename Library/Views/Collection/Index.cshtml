@@ -7,7 +7,7 @@
             right: 1px;
             font-size: 20px;
         }
-      
+
         .button {
             background-color: #900C3F;
             border: none;
@@ -21,6 +21,7 @@
             display: inline-block;
             text-decoration: none;
             cursor: pointer;
+            border-radius: 12px;
         }
 
         .button1 {
@@ -36,6 +37,7 @@
             display: inline-block;
             text-decoration: none;
             cursor: pointer;
+            border-radius: 12px;
         }
 
         .button:hover {
@@ -44,7 +46,14 @@
     </style>
     <div id="assets">
         <h3>Library Collection</h3>
-        
+
+        @using (Html.BeginForm())
+        {
+            <p>
+                Find by name: @Html.TextBox("SearchString")
+                <input type="submit" value="Search" />
+            </p>
+        }
         <h2><span style="color:#B29B35;">Books</span></h2>
         <div id="assetsTable">
             <table class="table table-condensed" id="collectionIndextable">

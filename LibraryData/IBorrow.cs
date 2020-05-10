@@ -23,6 +23,8 @@ namespace LibraryData
         bool IsBorrowed(int id);
         Borrow GetLatestBorrow(int itemId);
         string GetCurrentBorrowMember(int itemId);
+        void MarkLost(int id);
+        void MarkFound(int id);
 
     }
 }

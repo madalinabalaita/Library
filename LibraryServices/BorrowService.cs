@@ -249,6 +249,45 @@ namespace LibraryServices
             return borrow;
         }
 
-       
+
+        public void MarkLost(int id)
+        {
+            var item = _context.LibraryItems
+                .First(a => a.Id == id);
+
+            _context.Update(item);
+            //we change the status to "Lost"
+            item.Status = _context.Statuses.FirstOrDefault(a => a.Name == "Lost");
+
+            _context.SaveChanges();
+        }
+
+        public void MarkFound(int id)
+        {
+            var item = _context.LibraryItems
+                .First(a => a.Id == id);
+
+            _context.Update(item);
+            item.Status = _context.Statuses.FirstOrDefault(a => a.Name == "Available");
+            var now = DateTime.Now;
+
+            // remove any existing borrowed on the item
+            var checkout = _context.Borrows
+                .FirstOrDefault(a => a.LibraryItem.Id == id);
+            if (checkout != null) _context.Remove(checkout);
+
+            // close any existing borroed history
+            var history = _context.BorrowHistories
+                .FirstOrDefault(h =>
+                    h.LibraryItem.Id == id
+                    && h.Borrowed == null);
+            if (history != null)
+            {
+                _context.Update(history);
+                history.Borrowed = now;
+            }
+
+            _context.SaveChanges();
+        }
     }
 }

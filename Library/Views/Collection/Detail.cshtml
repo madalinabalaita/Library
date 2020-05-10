@@ -23,9 +23,10 @@
             display: inline-block;
             text-decoration: none;
             cursor: pointer;
+            border-radius: 12px;
         }
         .button1 {
-            background-color: #581845 ;
+            background-color: #581845;
             border: none;
             color: white;
             padding: 16px 32px;
@@ -37,11 +38,42 @@
             display: inline-block;
             text-decoration: none;
             cursor: pointer;
+            border-radius: 12px;
         }
-
+        .button2 {
+            background-color: #ff0000;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        .button3 {
+            background-color: #99ff66;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 12px;
+        }
         .button:hover {
             opacity: 1
         }
+
         p.ex1 {
             font-size: 40px;
         }
@@ -90,19 +122,26 @@
                  <p id="itemType">@Model.Genre</p>
                  <p style="color:#3399ff"> @Model.Description</p>
 
-
-                 @if (@Model.Status == "Borrowed")
+                 @if (@Model.Status != "Lost")
                  {
-                     <p id="itemPatron">Borrowed By:@Model.MemberName</p>
-                     <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
-                     <p><a class="mdl-button mdl-button--colored button1" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
-                 }
+                     @if (@Model.Status == "Borrowed")
+                     {
+                         <p id="itemPatron">Borrowed By:@Model.MemberName</p>
+                         <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
+                         <p><a class="mdl-button mdl-button--colored button1" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
+                     }
 
-                 @if (@Model.Status == "Available")
+                     @if (@Model.Status == "Available")
+                     {
+                         <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
+                     }
+                     <p><a class="mdl-button mdl-button--colored button2" role="button" asp-controller="Collection" asp-action="MarkLost" asp-route-id="@Model.ItemId">Item Lost</a></p>
+                 }
+                 else
                  {
-                     <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
+              <p style="color: #e60000;"><span style="font-weight:bold">This item cannot be borrowed because it has been lost.</span></p>
+                     <p><a class="mdl-button mdl-button--colored button3" role="button" asp-controller="Collection" asp-action="MarkFound" asp-route-id="@Model.ItemId">Item Found</a></p>
                  }
-
 
 
 
@@ -165,17 +204,25 @@
                     <p style="color:#3399ff"> @Model.Description</p>
 
 
-
-                    @if (Model.Status == "Borrowed")
+                    @if (@Model.Status != "Lost")
                     {
-                        <p id="itemPatron">Borrowed By:@Model.MemberName</p>
-                        <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
-                        <p><a class="mdl-button mdl-button--colored button1" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
+                        @if (Model.Status == "Borrowed")
+                        {
+                            <p id="itemPatron" style="color:#00cc99;">Borrowed By:@Model.MemberName</p>
+                            <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
+                            <p><a class="mdl-button mdl-button--colored button1" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
+                        }
+
+                        @if (Model.Status == "Available")
+                        {
+                            <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
+                        }
+                        <p><a class="mdl-button mdl-button--colored button2" role="button" asp-controller="Collection" asp-action="MarkLost" asp-route-id="@Model.ItemId"> Item Lost</a></p>
                     }
-
-                    @if (Model.Status == "Available")
+                    else
                     {
-                        <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
+                <p style="color:#e60000;"><span style="font-weight:bold">This item cannot be borrowed because it has been lost.</span></p>
+                        <p><a class="mdl-button mdl-button--colored button3" role="button" asp-controller="Collection" asp-action="MarkFound" asp-route-id="@Model.ItemId"> Item Found</a></p>
                     }
                 </div>
                     <div id="assetsTable">

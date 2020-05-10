@@ -30,33 +30,36 @@
         display: inline-block;
         text-decoration: none;
         cursor: pointer;
+        border-radius: 12px;
     }
-
+   
     .button:hover {
-        opacity: 1
+         opacity: 1
+    }
+    .img1 {
+        border: 10px solid transparent;
+        padding: 15px;
+        border-image: url(/images/border.png) 30% round;
+        border-radius: 12%;
     }
 </style>
-
 <div class="container">
-    <img src="~/images/items/books.jpg" alt="Library" style="width:45%;">
-    <div class="mdl-card__actions mdl-card--border centered">
-        <a class="mdl-button mdl-button--colored button" asp-controller="Collection" asp-action="Index">
-            
-                View Collection
-            
-        </a>
-    </div>
+    <div class="row">
+        <div class="col-sm-6" >
+            <img src="~/images/items/books.jpg" alt="Library" style="width:100%;" class="img1" >
+            <div class="mdl-card__actions mdl-card--border centered">
+                <a class="mdl-button mdl-button--colored button" asp-controller="Collection" asp-action="Index">
+                    View Collection
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <img src="~/images/people/members.png" alt="Library" style="width:100%;" class="img1" >
+            <div class="mdl-card__actions mdl-card--border centered ">
+                <a class="mdl-button mdl-button--colored button" asp-controller="Member" asp-action="Index">
+                    View Members
+                </a>
+            </div>
+        </div>
+    </div> 
 </div>
-<br/><br/><br/>
-<div class="container">
-    <img src="~/images/people/members.png" alt="Library" style="width:45%;">
-    <div class="mdl-card__actions mdl-card--border centered ">
-        <a class="mdl-button mdl-button--colored button" asp-controller="Member" asp-action="Index">
-          
-                View Members
-            
-        </a>
-    </div>
-</div>
-
-           

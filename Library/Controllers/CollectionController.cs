@@ -22,9 +22,11 @@ namespace Library.Controllers
             _items = items;
             __borrow = borrow;
         }
+      
         public IActionResult Index()
         {
             var itemModels = _items.GetAll();
+
             var listingResult = itemModels
                 .Select(result => new ItemIndexListingModel
                 {
@@ -43,8 +45,8 @@ namespace Library.Controllers
             };
             return View(model);
         }
-
-        public IActionResult Detail(int id)
+        
+            public IActionResult Detail(int id)
         {
             var item = _items.GetById(id);
             var currentHolds = __borrow.GetCurrentHolds(id).Select(h => new ItemHoldModel
@@ -108,20 +110,17 @@ namespace Library.Controllers
             };
             return View(model);
         }
-/*
-        public IActionResult MarkLost(int itemId)
+        public IActionResult MarkLost(int id)
         {
-            __borrow.MarkLost(itemId);
-            return RedirectToAction("Detail", new { id = itemId });
-
+            __borrow.MarkLost(id);
+            return RedirectToAction("Detail", new { id });
         }
-        public IActionResult MarkFound(int itemId)
+
+        public IActionResult MarkFound(int id)
         {
-            __borrow.MarkFound(itemId);
-            return RedirectToAction("Detail", new { id = itemId });
-
+            __borrow.MarkFound(id);
+            return RedirectToAction("Detail", new { id });
         }
-        */
         [HttpPost]
         public IActionResult PlaceBorrow(int itemId,int librarysubscriptionId)
         {
@@ -134,17 +133,18 @@ namespace Library.Controllers
             __borrow.PlaceHold(itemId, librarysubscriptionId);
             return RedirectToAction("Detail", new { id = itemId });
         }
-      /*  public async Task<IActionResult> Search(string searchString)
-        {
-            var items = from i in _context.LibraryItems
-                         select i;
+        /*  public async Task<IActionResult> Search(string searchString)
+          {
+              var items = from i in _context.LibraryItems
+                           select i;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                items = items.Where(s => s.Title.Contains(searchString));
-            }
+              if (!String.IsNullOrEmpty(searchString))
+              {
+                  items = items.Where(s => s.Title.Contains(searchString));
+              }
 
-            return View(await items.ToListAsync());
-        }*/
+              return View(await items.ToListAsync());
+          }*/
+        
     }
 }
