@@ -92,5 +92,11 @@ namespace LibraryServices
             return _context.LibraryItems
           .FirstOrDefault(item => item.Id == id).Duration;
         }
+
+        public string GetDescription(int id)
+        {
+            return _context.LibraryItems
+         .FirstOrDefault(item => item.Id == id).Description;
+        }
     }
 }

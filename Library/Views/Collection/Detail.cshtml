@@ -7,10 +7,9 @@
         .topright {
             position: absolute;
             top: 10px;
-            right: 1px;
-            font-size: 20px;
+            right:1px;
+            font-size: 18px;
         }
-
         .button {
             background-color: #900C3F;
             border: none;
@@ -66,71 +65,74 @@
     </div>
 
 </div>
-    <div class="jumbotron" style="   background-color: #f6eeee">
-        <div class="row">
-            <div class="col-md-4">
-                <div>
-                    <img class="detailImage" width="250" height="350" src="@Model.ImageUrl" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div>
-                    <p class="ex1" id="itemTitle" style="color:#7d0f42;"><span style="font-weight:bold">@Model.Title</span></p>
-                    <p class="ex3" id="itemAuthor" style="color:#99004d;">@Model.AOD</p>
-                    @if (Model.Status == "Available")
-                    {
-                        <p class="ex2" id="itemStatus" style="color:#00cc00;"><span style="font-style:italic">@Model.Status</span></p>
-                    }
-                    @if (Model.Status == "Borrowed")
-                    {
-                        <p class="ex2" id="itemStatus" style="color:#cc0000;"><span style="font-style:italic">@Model.Status</span></p>
-                    }
-                    <p id="itemType">@Model.Type</p>
-                    <p id="itemType">@Model.Genre</p>
+ <div class="jumbotron" style="   background-color: #f6eeee">
+   
+     <div class="row">
+         <div class="col-md-4">
+             <div>
+                 <img class="detailImage" width="250" height="350" src="@Model.ImageUrl" />
+             </div>
+         </div>
+         <div class="col-md-4">
+             <div>
+
+                 <p class="ex1" id="itemTitle" style="color:#7d0f42;"><span style="font-weight:bold">@Model.Title</span></p>
+                 <p class="ex3" id="itemAuthor" style="color:#99004d;">@Model.AOD</p>
+                 @if (Model.Status == "Available")
+                 {
+                     <p class="ex2" id="itemStatus" style="color:#00cc00;"><span style="font-style:italic">@Model.Status</span></p>
+                 }
+                 @if (Model.Status == "Borrowed")
+                 {
+                     <p class="ex2" id="itemStatus" style="color:#cc0000;"><span style="font-style:italic">@Model.Status</span></p>
+                 }
+                 <p id="itemType">@Model.Type</p>
+                 <p id="itemType">@Model.Genre</p>
+                 <p style="color:#3399ff"> @Model.Description</p>
+
+
+                 @if (@Model.Status == "Borrowed")
+                 {
+                     <p id="itemPatron">Borrowed By:@Model.MemberName</p>
+                     <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
+                     <p><a class="mdl-button mdl-button--colored button1" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
+                 }
+
+                 @if (@Model.Status == "Available")
+                 {
+                     <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
+                 }
 
 
 
 
-                    @if (@Model.Status == "Borrowed")
-                    {
-                        <p id="itemPatron">Borrowed By:@Model.MemberName</p>
-                        <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
-                        <p><a class="mdl-button mdl-button--colored button1" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
-                    }
 
-                    @if (@Model.Status == "Available")
-                    {
-                        <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
-                    }
+             </div>
+             <div id="assetsTable">
+                 <table class="table table-condensed" id="collectionIndextable">
+                     <thread>
+                         <tr bgcolor="#e6b3b3">
+                             <th>ISBN</th>
+                             <th>Dewey Number</th>
+                             <th>Number of pages</th>
+                             <th>Price to replace</th>
+                         </tr>
+                     </thread>
+                     <tbody>
+                         <tr class="assetRow" bgcolor="#f6eeee">
 
+                             <td class="">@Model.ISBN</td>
+                             <td class=""> @Model.DeweyNr</td>
+                             <td class=""> @Model.Duration</td>
+                             <td class="">@Model.Price  €</td>
 
-
-                </div>
-                <div id="assetsTable">
-                    <table class="table table-condensed" id="collectionIndextable">
-                        <thread>
-                            <tr bgcolor="#e6b3b3">
-                                <th>ISBN</th>
-                                <th>Dewey Number</th>
-                                <th>Number of pages</th>
-                                <th>Price to replace</th>
-                            </tr>
-                        </thread>
-                        <tbody>
-                            <tr class="assetRow" bgcolor="#f6eeee">
-
-                                <td class="">@Model.ISBN</td>
-                                <td class=""> @Model.DeweyNr</td>
-                                <td class=""> @Model.Duration</td>
-                                <td class="">@Model.Price  €</td>
-
-                            </tr>
-                        </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-    </div>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+         </div>
+     </div>
+ </div>
 }
 @if (Model.Type == "Movie")
 {<div class="container">
@@ -160,7 +162,7 @@
                     }
                     <p id="itemType">@Model.Type</p>
                     <p id="itemType">@Model.Genre</p>
-
+                    <p style="color:#3399ff"> @Model.Description</p>
 
 
 
@@ -176,28 +178,28 @@
                         <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="Borrow" asp-route-id="@Model.ItemId">Borrow</a></p>
                     }
                 </div>
-                <div id="assetsTable">
-                    <table class="table table-condensed" id="collectionIndextable">
-                        <thread>
-                            <tr bgcolor="#e6b3b3">
-                                <th>Length of the movie</th>
-                                <th>Price to replace</th>
-                               
-                            </tr>
-                        </thread>
-                        <tbody>
-                            <tr class="assetRow" bgcolor="#f6eeee">
+                    <div id="assetsTable">
+                        <table class="table table-condensed" id="collectionIndextable">
+                            <thread>
+                                <tr bgcolor="#e6b3b3">
+                                    <th>Length of the movie</th>
+                                    <th>Price to replace</th>
 
-                            
-                                <td class=""> @Model.Duration</td>
-                                <td class="">@Model.Price  €</td>
+                                </tr>
+                            </thread>
+                            <tbody>
+                                <tr class="assetRow" bgcolor="#f6eeee">
 
-                            </tr>
-                        </tbody>
-                    </table>
+
+                                    <td class=""> @Model.Duration minutes</td>
+                                    <td class="">@Model.Price  €</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
 }
 <div class="row">

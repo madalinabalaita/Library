@@ -2,6 +2,7 @@
 using Library.Models.Collection;
 using LibraryData;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Library.Controllers
     {
         private ILibraryItem _items;
         private IBorrow __borrow;
+        private LibraryDbContext _context;
 
         public CollectionController(ILibraryItem items,IBorrow borrow)
         {
@@ -67,8 +69,8 @@ namespace Library.Controllers
                 MemberName=__borrow.GetCurrentBorrowMember(id),
                 CurrentHolds=currentHolds,
                 Genre=_items.GetGenre(id),
-                Duration=_items.GetDuration(id)
-                
+                Duration=_items.GetDuration(id),
+                Description=_items.GetDescription(id)
 
             };
             return View(model);
@@ -132,5 +134,17 @@ namespace Library.Controllers
             __borrow.PlaceHold(itemId, librarysubscriptionId);
             return RedirectToAction("Detail", new { id = itemId });
         }
+      /*  public async Task<IActionResult> Search(string searchString)
+        {
+            var items = from i in _context.LibraryItems
+                         select i;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(await items.ToListAsync());
+        }*/
     }
 }

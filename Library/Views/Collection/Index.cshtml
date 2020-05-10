@@ -44,6 +44,7 @@
     </style>
     <div id="assets">
         <h3>Library Collection</h3>
+        
         <h2><span style="color:#B29B35;">Books</span></h2>
         <div id="assetsTable">
             <table class="table table-condensed" id="collectionIndextable">
@@ -62,21 +63,21 @@
                     @foreach (var asset in Model.Items)
                     {@if (asset.Type == "Book")
                         {
-                    <tr class="assetRow" bgcolor="#f6eeee">
-                        <td class=""><img width="150" height="200" src="@asset.ImageUrl" class="imageCell" /></td>
-                        <td class=""  style="color:#7d0f42;"><span style="font-weight:bold">@asset.Title</span></td>
-                        <td class="">@asset.AOD</td>
-                        <td class="">@asset.Genre</td>
-                        <td class="">@asset.DeweyNr</td>
+                            <tr class="assetRow" bgcolor="#f6eeee">
+                                <td class=""><img width="150" height="200" src="@asset.ImageUrl" class="imageCell" /></td>
+                                <td class="" style="color:#7d0f42;"><span style="font-weight:bold">@asset.Title</span></td>
+                                <td class="">@asset.AOD</td>
+                                <td class="">@asset.Genre</td>
+                                <td class="">@asset.DeweyNr</td>
 
-                        <td>
-                            <a class="mdl-button mdl-button--colored button" asp-action="Detail" asp-route-id="@asset.Id">
-                                View
-                            </a>
-                        </td>
+                                <td>
+                                    <a class="mdl-button mdl-button--colored button" asp-action="Detail" asp-route-id="@asset.Id">
+                                        View
+                                    </a>
+                                </td>
 
 
-                    </tr>
+                            </tr>
                         }
                 }
                 </tbody>
@@ -98,21 +99,21 @@
                     @foreach (var asset in Model.Items)
                     {@if (asset.Type == "Movie")
                         {
-                    <tr class="assetRow" bgcolor="#f6eeee">
-                        <td class=""><img width="150" height="200" src="@asset.ImageUrl" class="imageCell" /></td>
-                        <td class=""  style="color:#7d0f42;"><span style="font-weight:bold">@asset.Title</span></td>
-                        <td class="">@asset.AOD</td>
-                        <td class="">@asset.Genre</td>
-                        <td>
-                            <a class="mdl-button mdl-button--colored button" asp-action="Detail" asp-route-id="@asset.Id">
-                                View
-                            </a>
-                        </td>
-                    </tr>
+                            <tr class="assetRow" bgcolor="#f6eeee">
+                                <td class=""><img width="150" height="200" src="@asset.ImageUrl" class="imageCell" /></td>
+                                <td class="" style="color:#7d0f42;"><span style="font-weight:bold">@asset.Title</span></td>
+                                <td class="">@asset.AOD</td>
+                                <td class="">@asset.Genre</td>
+                                <td>
+                                    <a class="mdl-button mdl-button--colored button" asp-action="Detail" asp-route-id="@asset.Id">
+                                        View
+                                    </a>
+                                </td>
+                            </tr>
                         }
                 }
                 </tbody>
             </table>
         </div>
-       
+
     </div>

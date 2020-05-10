@@ -23,6 +23,7 @@ namespace Library.Models.Collection
         public string MemberName { get; set; }
         public string Genre { get; set; }
         public string Duration { get; set; }
+        public string Description { get; set; }
         public Borrow LatestBorrow { get; set; }
 
         public IEnumerable<BorrowHistory> BorrowHistory { get; set; }
