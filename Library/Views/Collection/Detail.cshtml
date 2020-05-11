@@ -126,7 +126,7 @@
                  {
                      @if (@Model.Status == "Borrowed")
                      {
-                         <p id="itemPatron">Borrowed By:@Model.MemberName</p>
+                         <p id="itemPatron" style="color:#00cc99;">Borrowed By:@Model.MemberName</p>
                          <p><a class="mdl-button mdl-button--colored button" role="button" asp-controller="Collection" asp-action="ReturnItem" asp-route-id="@Model.ItemId">Return</a></p>
                          <p><a class="mdl-button mdl-button--colored button1" role="button" asp-controller="Collection" asp-action="Hold" asp-route-id="@Model.ItemId">Place Hold</a></p>
                      }

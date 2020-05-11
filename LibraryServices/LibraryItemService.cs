@@ -1,8 +1,6 @@
 ﻿using LibraryData;
 using LibraryData.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -39,7 +37,7 @@ namespace LibraryServices
       
 
         public string GetDeweyNr(int id)
-        {
+        {   //just for books
             //Discriminator
             if (_context.Books.Any(book => book.Id == id))
             {
@@ -50,7 +48,7 @@ namespace LibraryServices
         }
 
         public string GetISBN(int id)
-        {
+        {   //just for books
             if (_context.Books.Any(b => b.Id == id))
             {
                 return _context.Books.FirstOrDefault(b => b.Id == id).ISBN;
@@ -60,22 +58,18 @@ namespace LibraryServices
 
         public string GetTitle(int id)
         {
-            return _context.LibraryItems
-                .FirstOrDefault(ILibraryItem => ILibraryItem.Id == id).Title;
+            return _context.LibraryItems.FirstOrDefault(ILibraryItem => ILibraryItem.Id == id).Title;
         }
 
         public string GetType(int id)
-        {
-            var book = _context.LibraryItems.OfType<Book>()
-                .Where(book => book.Id == id);
+        {   //type= book or movie
+            var book = _context.LibraryItems.OfType<Book>().Where(book => book.Id == id);
             return book.Any() ? "Book" : "Movie";
         }
         public string GetAOD(int id)
-        {
-            var isBook = _context.LibraryItems.OfType<Book>()
-                   .Where(item => item.Id == id).Any();
-            var isMovie = _context.LibraryItems.OfType<Movie>()
-                  .Where(item => item.Id == id).Any();
+        {   //get author or director
+            var isBook = _context.LibraryItems.OfType<Book>().Where(item => item.Id == id).Any();
+            var isMovie = _context.LibraryItems.OfType<Movie>().Where(item => item.Id == id).Any();
             return isBook ?
                 _context.Books.FirstOrDefault(book => book.Id == id).Author :
                 _context.Movies.FirstOrDefault(movie => movie.Id == id).Director;
