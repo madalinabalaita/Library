@@ -46,14 +46,12 @@
     </style>
     <div id="assets">
         <h3>Library Collection</h3>
-
-        @using (Html.BeginForm())
-        {
+        <form asp-controller="Collection" asp-action="Index" method="get">
             <p>
-                Find by name: @Html.TextBox("SearchString")
-                <input type="submit" value="Search" />
+                Title: <input type="text" name="search">
+                <input type="submit" value="Filter" />
             </p>
-        }
+        </form>
         <h2><span style="color:#B29B35;">Books</span></h2>
         <div id="assetsTable">
             <table class="table table-condensed" id="collectionIndextable">

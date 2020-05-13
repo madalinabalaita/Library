@@ -18,6 +18,6 @@ namespace LibraryData
         string GetDescription(int id);
         IEnumerable<LibraryItem> GetAll();
         LibraryItem GetById(int id);
-
+        
     }
 }

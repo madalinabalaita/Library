@@ -3,6 +3,7 @@ using LibraryData.Models;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System;
 
 namespace LibraryServices
 {
@@ -33,8 +34,9 @@ namespace LibraryServices
                 .Include(item => item.Status)
                 .FirstOrDefault(item => item.Id == id);
         }
-
       
+
+
 
         public string GetDeweyNr(int id)
         {   //just for books
@@ -92,5 +94,8 @@ namespace LibraryServices
             return _context.LibraryItems
          .FirstOrDefault(item => item.Id == id).Description;
         }
+
+        
+       
     }
 }

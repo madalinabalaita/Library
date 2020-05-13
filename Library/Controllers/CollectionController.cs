@@ -1,8 +1,13 @@
 ﻿using Library.Models.BorrowModel;
 using Library.Models.Collection;
 using LibraryData;
+using LibraryData.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Library.Controllers
 {
@@ -18,30 +23,32 @@ namespace Library.Controllers
             __borrow = borrow;
         }
       
+
         public IActionResult Index()
-        {
-            var itemModels = _items.GetAll();
+         {
 
-            var listingResult = itemModels
-                .Select(result => new ItemIndexListingModel
-                {
-                    Id = result.Id,
-                    ImageUrl = result.ImageUrl,
-                    AOD = _items.GetAOD(result.Id),
-                    DeweyNr = _items.GetDeweyNr(result.Id),
-                    Title = result.Title,
-                    Type = _items.GetType(result.Id),
-                     Genre = _items.GetGenre(result.Id)
+             var itemModels = _items.GetAll();
 
-                });
-            var model = new ItemIndexModel()
-            {
-                Items = listingResult
-            };
-            return View(model);
-        }
-        
-            public IActionResult Detail(int id)
+             var listingResult = itemModels
+                 .Select(result => new ItemIndexListingModel
+                 {
+                     Id = result.Id,
+                     ImageUrl = result.ImageUrl,
+                     AOD = _items.GetAOD(result.Id),
+                     DeweyNr = _items.GetDeweyNr(result.Id),
+                     Title = result.Title,
+                     Type = _items.GetType(result.Id),
+                      Genre = _items.GetGenre(result.Id)
+
+                 });
+             var model = new ItemIndexModel()
+             {
+                 Items = listingResult
+             };
+             return View(model);
+         }
+      
+        public IActionResult Detail(int id)
         {
             var item = _items.GetById(id);
             var currentHolds = __borrow.GetCurrentHolds(id).Select(h => new ItemHoldModel
@@ -130,8 +137,8 @@ namespace Library.Controllers
         }
         /*  public async Task<IActionResult> Search(string searchString)
           {
-              var items = from i in _context.LibraryItems
-                           select i;
+              var items = (from i in _context.LibraryItems
+                           select i).ToList();
 
               if (!String.IsNullOrEmpty(searchString))
               {
@@ -139,7 +146,8 @@ namespace Library.Controllers
               }
 
               return View(await items.ToListAsync());
-          }*/
+          }
+*/
         
     }
 }
