@@ -9,71 +9,81 @@
             <div class="col-md-4">
                 <div>
                     <img class="detailMemberImage" width="235" height="335" src="@Model.ImageUrl" />
-                    <h2>@Model.FirstName @Model.LastName</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                   
+                    <h2 style="color:#660033;">@Model.FirstName @Model.LastName</h2>
                     <div class="memberContact">
-                        <div id="memberGender">Gender: @Model.Gender</div>
-                        <div id="memberSubscription">Library Subscription ID : @Model.LibrarySubscriptionId</div>
-                        <div id="memberAddress">Address : @Model.Address</div>
-                        <div id="memberPhone">Phone Number : @Model.Phone</div>
-                        <div id="memberSince">Member Since : @Model.MemberSince</div>
+                        <div id="memberGender"><span style="font-weight:bold">Gender:</span> @Model.Gender</div>
+                        <div id="memberSubscription"><span style="font-weight:bold">Library Subscription ID :</span> @Model.LibrarySubscriptionId</div>
+                        <div id="memberAddress"><span style="font-weight:bold">Address :</span> @Model.Address</div>
+                        <div id="memberPhone"><span style="font-weight:bold">Phone Number :</span> @Model.Phone</div>
+                        <div id="memberSince"><span style="font-weight:bold">Member Since :</span> @Model.MemberSince</div>
                         @if (@Model.OverdueFees > 0)
                         {
-                            <div id="memberFees">Current Fees : @Model.OverdueFees €</div>
+                            <div id="memberFees" style="color:#e60000"><span style="font-weight:bold">Current Fees :</span> @Model.OverdueFees €</div>
                         }
                         else
                         {
-                            <div id="memberNoFees">No Fees.</div>
+                            <div id="memberNoFees"  style="color:#00cc00">No Fees.</div>
                         }
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <h4>Items Currently Borrowed</h4>
                 @if (Model.ItemsBorrowed.Any())
                 {
                     <div id="memberItems">
                         <ul>
-                            @foreach(var borrowed in Model.ItemsBorrowed)
+                            @foreach (var borrowed in Model.ItemsBorrowed)
                             {
-                                <li>
-                                    @borrowed.LibraryItem.Title -(Library Item ID: @borrowed.LibraryItem.Id)
-                                <ul>
+                            <li>
+                                ID: @borrowed.LibraryItem.Id - Title:<span style="font-weight:bold"> @borrowed.LibraryItem.Title</span>
+                                    <ul>
+                                         <li>
+                                                  <span style="font-weight:bold">Since:</span>@borrowed.Since
+                                         </li>
                                     <li>
-                                        Since:@borrowed.Since
-                                    </li>
-                                    <li>
-                                        Until:@borrowed.Until
-                                    </li>
-                                </ul>
-                                </li>
+                                    <span style="font-weight:bold">Until:</span>@borrowed.Until
+                                     </li>
+                                    </ul>
+                            </li>
                             }
                         </ul>
                     </div>
                 }
                 else
                 {
-                    <div> No items are currently borrowed.</div>
+                    <div style="color:#0077b3"> No items are currently borrowed.</div>
                 }
-            </div>
-            <div class="col-md-4">
-                <h4>Items Currently On Hold</h4>
-                @if (Model.Holds.Any())
-                {
-                    <div id="memberHolds">
-                        <ul>
-                            @foreach(var hold in Model.Holds)
-                            {
-                                <li>@hold.LibraryItem.Title -Placed @hold.HoldPlaced.ToString("yy-dd-MM - HH:mm")</li>
+                <br/>
+                <br/>
+                <br/>
+                <div >
+                    <h4>Items Currently On Hold</h4>
+                    @if (Model.Holds.Any())
+                    {
+                        <div id="memberHolds">
+                            <ul>
+                                @foreach (var hold in Model.Holds)
+                                {
+                                    <li>@hold.LibraryItem.Title -Placed @hold.HoldPlaced.ToString("yy-dd-MM - HH:mm")</li>
 
-                            }
-                        </ul>
-                    </div>
-                }
-                else
-                {
-                    <div>No items on hold!</div>
-                }
+                                }
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="color:#0077b3">No items on hold!</div>
+                    }
+                </div>
             </div>
+            
         </div>
     </div>
 </div>
