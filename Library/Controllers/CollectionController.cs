@@ -2,6 +2,7 @@
 using Library.Models.Collection;
 using LibraryData;
 using LibraryData.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,15 +16,26 @@ namespace Library.Controllers
     {
         private ILibraryItem _items;
         private IBorrow __borrow;
-        private LibraryDbContext _context;
+      //  private LibraryDbContext _context;
 
         public CollectionController(ILibraryItem items,IBorrow borrow)
         {
             _items = items;
             __borrow = borrow;
         }
-      
+/*
+        [Authorize]
+        public async Task<IActionResult> IndexAsync(ItemSearchViewModel viewModel)
+        {
+            var results = await _items.SearchItemsAsync(viewModel.SearchTerm);
 
+            return View(new ItemSearchViewModel
+            {
+                SearchTerm = viewModel.SearchTerm,
+                Results = results
+            });
+        }
+        */
         public IActionResult Index()
          {
 

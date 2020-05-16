@@ -1,6 +1,8 @@
 ﻿using LibraryData.Models;
+using System;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace LibraryData
 {
@@ -18,6 +20,7 @@ namespace LibraryData
         string GetDescription(int id);
         IEnumerable<LibraryItem> GetAll();
         LibraryItem GetById(int id);
-        
+        Task<IEnumerable<LibraryItem>> SearchItemsAsync(string searchTerm);
+       
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System;
+using System.Threading.Tasks;
 
 namespace LibraryServices
 {
@@ -95,7 +96,21 @@ namespace LibraryServices
          .FirstOrDefault(item => item.Id == id).Description;
         }
 
-        
-       
+        [Obsolete]
+        public Task<IEnumerable<LibraryItem>> SearchItemsAsync(string searchTerm)
+        {
+            if (String.IsNullOrEmpty(searchTerm))
+            {
+                return Task.FromResult(Enumerable.Empty<LibraryItem>());
+            }
+
+            var results = _context.Query<LibraryItem>()
+                .Where(c => c.Title.Contains(searchTerm))
+                .ToArray() as IEnumerable<LibraryItem>;
+
+            return Task.FromResult(results);
+        }
+
+      
     }
 }
