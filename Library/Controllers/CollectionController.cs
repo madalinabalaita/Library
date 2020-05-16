@@ -23,19 +23,7 @@ namespace Library.Controllers
             _items = items;
             __borrow = borrow;
         }
-/*
-        [Authorize]
-        public async Task<IActionResult> IndexAsync(ItemSearchViewModel viewModel)
-        {
-            var results = await _items.SearchItemsAsync(viewModel.SearchTerm);
 
-            return View(new ItemSearchViewModel
-            {
-                SearchTerm = viewModel.SearchTerm,
-                Results = results
-            });
-        }
-        */
         public IActionResult Index()
          {
 

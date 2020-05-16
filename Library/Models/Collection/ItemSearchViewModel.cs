@@ -19,23 +19,4 @@ namespace Library.Models.Collection
         public IEnumerable<LibraryItem> Results { get; internal set; }
     }
 }
-/*
- * 
 
-using Uaic.Tap2020Demo.Core;
-
-namespace Tap2020Demo.Web.Areas.BackOffice.Models
-{
-    public class SearchCustomersViewModel
-    {
-        public SearchCustomersViewModel()
-        {
-            Results = Enumerable.Empty<Customer>();
-        }
-
-        public string SearchTerm { get; set; }
-
-        public IEnumerable<Customer> Results { get; internal set; }
-    }
-}
- */

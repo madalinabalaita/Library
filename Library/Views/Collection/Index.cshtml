@@ -39,19 +39,34 @@
             cursor: pointer;
             border-radius: 12px;
         }
-
+        .button2 {
+            background-color: #a6ccf2;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+       
         .button:hover {
             opacity: 1
         }
     </style>
     <div id="assets">
         <h3>Library Collection</h3>
-        <form asp-controller="Collection" asp-action="Index" method="get">
-            <p>
-                Title: <input type="text" name="search">
-                <input type="submit" value="Filter" />
-            </p>
-        </form>
+     
+        <div class="mdl-card__actions mdl-card--border centered">
+            <a class="mdl-button mdl-button--colored button2" asp-controller="Search" asp-action="Index">
+               Search an Item
+            </a>
+        </div>
         <h2><span style="color:#B29B35;">Books</span></h2>
         <div id="assetsTable">
             <table class="table table-condensed" id="collectionIndextable">

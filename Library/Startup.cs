@@ -7,6 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using LibraryServices;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace Library
 {
@@ -27,6 +30,8 @@ namespace Library
             services.AddScoped<ILibraryItem, LibraryItemService>();
             services.AddScoped<IBorrow, BorrowService>();
             services.AddScoped<IMember,MemberService>();
+            services.AddMvc()
+             .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
             services.AddDbContext<LibraryDbContext>(a => a.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));
         }
 
@@ -43,6 +48,18 @@ namespace Library
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            var supportedCultures = new[]
+        {
+                new CultureInfo("ro-RO")
+            };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("ro-RO"),
+                // Formatting numbers, dates, etc.
+                SupportedCultures = supportedCultures,
+                // UI strings that we have localized.
+                SupportedUICultures = supportedCultures
+            });
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
