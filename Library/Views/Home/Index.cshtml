@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Library";
+    ViewData["Title"] = " Solace Library";
 }
 <h3>@ViewData["Title"]</h3>
 <style>
@@ -32,19 +32,42 @@
         cursor: pointer;
         border-radius: 12px;
     }
-   
-    .button:hover {
-         opacity: 1
-    }
+
+        .button:hover {
+            opacity: 1
+        }
+
     .img {
         border: 10px solid transparent;
-      
         border-radius: 12%;
+    }
+
+    .center {
+        top: 50%;
+        left: 50%;
+    }
+
+    #myDIV {
+        color: #ef8fa7;
+        animation: mymove 7s infinite;
+    }
+
+    @@keyframes mymove {
+        50% {
+            color: #79ecc6;
+        }
     }
 </style>
 <div class="container">
+    <div id="myDIV" class="center">
+        <h1>Welcome to Solace!</h1>
+        <h3>A Library in which you can take SOLACE in!</h3>
+        <p>Check out our items!</p>
+    </div>
+</div>
+<div class="container">
     <div class="row">
-        <div class="col-sm-6" >
+        <div class="col-sm-6">
             <img src="~/images/items/books.jpg" alt="Library" style="width:100%;" class="img">
             <div class="mdl-card__actions mdl-card--border centered">
                 <a class="mdl-button mdl-button--colored button" asp-controller="Collection" asp-action="Index">
@@ -60,5 +83,5 @@
                 </a>
             </div>
         </div>
-    </div> 
+    </div>
 </div>
