@@ -3,6 +3,67 @@
 @inject IViewLocalizer Localizer
 
 @model Library.Models.Collection.ItemSearchViewModel
+<style>
+
+    .topright {
+        position: absolute;
+        top: 10px;
+        right: 1px;
+        font-size: 20px;
+    }
+
+    .button {
+        background-color: #900C3F;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        opacity: 0.6;
+        transition: 0.3s;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .button1 {
+        background-color: #581845;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        opacity: 0.6;
+        transition: 0.3s;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .button2 {
+        background-color: #a6ccf2;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        opacity: 0.6;
+        transition: 0.3s;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .button:hover {
+        opacity: 1
+    }
+</style>
 <form asp-controller="Search" asp-action="Index" method="get">
     <div class="form-row">
         <div class="col-10">
@@ -13,3 +74,32 @@
         </div>
     </div>
 </form>
+<br/><br/>
+    <div id="assetsTable">
+        <table class="table table-condensed" id="collectionIndextable">
+            <thread>
+                <tr bgcolor="#e6b3b3">
+                    <th scope="col">@Localizer["Image"]</th>
+                    <th scope="col">@Localizer["Title"]</th>
+                    <th scope="col">@Localizer["Genre"]</th>
+                    <th scope="col">@Localizer["Action"]</th>
+                </tr>
+           </thread>
+            <tbody>
+                @foreach (var item in Model.Results)
+                {
+                    <tr bgcolor="#f6eeee">
+                        <td><img width="150" height="200" src="@item.ImageUrl" class="imageCell" /></td>
+                        <td class="" style="color:#7d0f42;"><span style="font-weight:bold">@item.Title</span></td>
+                        <td class="">@item.Genre</td>
+
+                        <td>
+                            <a class="mdl-button mdl-button--colored button" asp-controller="Collection" asp-action="Detail" asp-route-id="@item.Id">
+                                View
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
