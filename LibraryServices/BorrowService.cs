@@ -37,16 +37,21 @@ namespace LibraryServices
 
         public IEnumerable<BorrowHistory> GetBorrowHistory(int id)
         {   //get borrow history by id (where we know the item and the subscription)
-            return _context.BorrowHistories.Include(h=>h.LibraryItem).Include(h=>h.LibrarySubscription).Where(h => h.LibraryItem.Id == id);
+            return _context.BorrowHistories.Include(h => h.LibraryItem)
+                .Include(h => h.LibrarySubscription)
+                .Where(h => h.LibraryItem.Id == id);
         }
 
         public Borrow GetLatestBorrow(int itemId)
         { //we order the borrows  to get the latest one
-            return _context.Borrows.Where(b => b.LibraryItem.Id == itemId).OrderByDescending(d => d.Since).FirstOrDefault();
+            return _context.Borrows.Where(b => b.LibraryItem.Id == itemId)
+                .OrderByDescending(d => d.Since)
+                .FirstOrDefault();
         }
         public IEnumerable<Hold> GetCurrentHolds(int id)
         {   //we get the current holds
-            return _context.Holds.Include(h => h.LibraryItem).Where(h => h.LibraryItem.Id== id);
+            return _context.Holds.Include(h => h.LibraryItem)
+                .Where(h => h.LibraryItem.Id == id);
         }
 
         //update the status of an item
@@ -204,7 +209,10 @@ namespace LibraryServices
 
         public DateTime GetCurrentHoldPlaced(int id)
         {
-            var hold = _context.Holds.Include(h => h.LibraryItem).Include(h => h.LibrarySubscription).FirstOrDefault(h => h.Id == id).HoldPlaced;
+            var hold = _context.Holds.Include(h => h.LibraryItem)
+                .Include(h => h.LibrarySubscription)
+                .FirstOrDefault(h => h.Id == id)
+                .HoldPlaced;
             return hold;
 
         }
@@ -217,13 +225,15 @@ namespace LibraryServices
             
             }
             var subscriptionId = borrow.LibrarySubscription.Id;
-            var member = _context.Members.Include(m => m.LibrarySubscription).FirstOrDefault(m => m.LibrarySubscription.Id == subscriptionId);
+            var member = _context.Members.Include(m => m.LibrarySubscription)
+                .FirstOrDefault(m => m.LibrarySubscription.Id == subscriptionId);
             return member.FirstName + " " + member.LastName;
         }
 
         private Borrow GetBorrowByItemId(int itemId)
         {
-            var borrow = _context.Borrows.Include(b => b.LibraryItem).Include(b => b.LibrarySubscription)
+            var borrow = _context.Borrows.Include(b => b.LibraryItem)
+                 .Include(b => b.LibrarySubscription)
                  .FirstOrDefault(b => b.LibraryItem.Id == itemId);
             return borrow;
         }

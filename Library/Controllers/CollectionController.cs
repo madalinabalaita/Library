@@ -1,14 +1,9 @@
 ﻿using Library.Models.BorrowModel;
 using Library.Models.Collection;
 using LibraryData;
-using LibraryData.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Library.Controllers
 {
@@ -135,19 +130,7 @@ namespace Library.Controllers
             __borrow.PlaceHold(itemId, librarysubscriptionId);
             return RedirectToAction("Detail", new { id = itemId });
         }
-        /*  public async Task<IActionResult> Search(string searchString)
-          {
-              var items = (from i in _context.LibraryItems
-                           select i).ToList();
 
-              if (!String.IsNullOrEmpty(searchString))
-              {
-                  items = items.Where(s => s.Title.Contains(searchString));
-              }
-
-              return View(await items.ToListAsync());
-          }
-*/
         
     }
 }

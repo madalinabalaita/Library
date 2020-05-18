@@ -1,10 +1,6 @@
 ﻿using Library.Models.Collection;
 using LibraryData;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Library.Controllers
@@ -12,8 +8,6 @@ namespace Library.Controllers
     public class SearchController:Controller
     {
         private ILibraryItem _items;
-      
-       
 
         public SearchController(ILibraryItem items)
         {
