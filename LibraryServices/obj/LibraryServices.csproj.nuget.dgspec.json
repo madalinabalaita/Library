@@ -4,12 +4,12 @@
     "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\LibraryServices.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj": {
+    "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj",
-        "projectName": "LibraryData",
-        "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj",
+        "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj",
+        "projectName": "Library.Data",
+        "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj",
         "packagesPath": "C:\\Users\\Madalina\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\obj\\",
         "projectStyle": "PackageReference",
@@ -95,8 +95,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj": {
-                "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj"
+              "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj": {
+                "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj"
               }
             }
           }

@@ -24,8 +24,8 @@
     ".NETCoreApp,Version=v3.1": {
       "Library/1.0.0": {
         "dependencies": {
-          "LibraryData": "1.0.0",
-          "LibraryServices": "1.0.0",
+          "Library.Data": "1.0.0",
+          "Library.Services": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.3",
           "Microsoft.EntityFrameworkCore.Design": "3.1.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
@@ -2109,27 +2109,27 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "LibraryData/1.0.0": {
+      "Library.Data/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3"
         },
         "runtime": {
-          "LibraryData.dll": {}
+          "Library.Data.dll": {}
         },
         "compile": {
-          "LibraryData.dll": {}
+          "Library.Data.dll": {}
         }
       },
-      "LibraryServices/1.0.0": {
+      "Library.Services/1.0.0": {
         "dependencies": {
-          "LibraryData": "1.0.0"
+          "Library.Data": "1.0.0"
         },
         "runtime": {
-          "LibraryServices.dll": {}
+          "Library.Services.dll": {}
         },
         "compile": {
-          "LibraryServices.dll": {}
+          "Library.Services.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -4830,12 +4830,12 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "LibraryData/1.0.0": {
+    "Library.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "LibraryServices/1.0.0": {
+    "Library.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,0 +1,12 @@
+C:\Users\Madalina\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.1\Library.Services.csprojAssemblyReference.cache
+C:\Users\Madalina\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.1\Library.Services.csproj.CoreCompileInputs.cache
+C:\Users\Madalina\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.1\Library.Services.AssemblyInfoInputs.cache
+C:\Users\Madalina\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.1\Library.Services.AssemblyInfo.cs
+C:\Users\Madalina\source\repos\Library\LibraryServices\bin\Debug\netcoreapp3.1\Library.Services.deps.json
+C:\Users\Madalina\source\repos\Library\LibraryServices\bin\Debug\netcoreapp3.1\Library.Services.dll
+C:\Users\Madalina\source\repos\Library\LibraryServices\bin\Debug\netcoreapp3.1\Library.Services.pdb
+C:\Users\Madalina\source\repos\Library\LibraryServices\bin\Debug\netcoreapp3.1\Library.Data.dll
+C:\Users\Madalina\source\repos\Library\LibraryServices\bin\Debug\netcoreapp3.1\Library.Data.pdb
+C:\Users\Madalina\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.1\Library.Services.csproj.CopyComplete
+C:\Users\Madalina\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.1\Library.Services.dll
+C:\Users\Madalina\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.1\Library.Services.pdb

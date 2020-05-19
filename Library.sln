@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{30279FEF-0A5C-46E6-AAD2-5FF80F36784D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryData", "LibraryData\LibraryData.csproj", "{2511E643-C492-4B31-9286-86BE347A7C8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Data", "LibraryData\Library.Data.csproj", "{2511E643-C492-4B31-9286-86BE347A7C8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryServices", "LibraryServices\LibraryServices.csproj", "{FCABCE13-56B9-4B6A-9407-0C2FFAD3FD6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Services", "LibraryServices\Library.Services.csproj", "{FCABCE13-56B9-4B6A-9407-0C2FFAD3FD6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

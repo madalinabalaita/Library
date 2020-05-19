@@ -5001,9 +5001,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj",
-      "projectName": "LibraryData",
-      "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj",
+      "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj",
+      "projectName": "Library.Data",
+      "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj",
       "packagesPath": "C:\\Users\\Madalina\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\obj\\",
       "projectStyle": "PackageReference",

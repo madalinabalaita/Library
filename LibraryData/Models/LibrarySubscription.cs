@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace LibraryData.Models
+namespace Library.Data.Models
 {
     public class LibrarySubscription
     {

@@ -1,0 +1,12 @@
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.Data.csprojAssemblyReference.cache
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.Data.csproj.CoreCompileInputs.cache
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.Data.AssemblyInfoInputs.cache
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.Data.AssemblyInfo.cs
+C:\Users\Madalina\source\repos\Library\LibraryData\bin\Debug\netcoreapp3.1\Library.Data.deps.json
+C:\Users\Madalina\source\repos\Library\LibraryData\bin\Debug\netcoreapp3.1\Library.Data.runtimeconfig.json
+C:\Users\Madalina\source\repos\Library\LibraryData\bin\Debug\netcoreapp3.1\Library.Data.runtimeconfig.dev.json
+C:\Users\Madalina\source\repos\Library\LibraryData\bin\Debug\netcoreapp3.1\Library.Data.dll
+C:\Users\Madalina\source\repos\Library\LibraryData\bin\Debug\netcoreapp3.1\Library.Data.pdb
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.Data.dll
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.Data.pdb
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.Data.genruntimeconfig.cache

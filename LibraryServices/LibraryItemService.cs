@@ -1,12 +1,12 @@
-﻿using LibraryData;
-using LibraryData.Models;
+﻿using Library.Data;
+using Library.Data.Models;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System;
 using System.Threading.Tasks;
 
-namespace LibraryServices
+namespace Library.Services
 {
     public class LibraryItemService : ILibraryItem
     {

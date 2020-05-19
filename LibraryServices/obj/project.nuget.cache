@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "93y67+Cxozb8eU7aYteyi/P3NVneqLNEmzAmRivOH5ziOPI49hXPVQIcRwAbi4Iojdo8zbTbY/3APBrUU63bQA==",
+  "dgSpecHash": "BzH+p1QJyy9F11f7BbSIUVXkrkOJ+y3c8dUZ9AJHm5ijmpqcWmRkqrWAWuwBUmH+ezRQLDjnNgsITBubhZ8tDw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\LibraryServices.csproj",
+  "projectFilePath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Madalina\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\Madalina\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

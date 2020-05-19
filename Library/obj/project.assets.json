@@ -2498,7 +2498,7 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "LibraryData/1.0.0": {
+      "Library.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -2506,23 +2506,23 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3"
         },
         "compile": {
-          "bin/placeholder/LibraryData.dll": {}
+          "bin/placeholder/Library.Data.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LibraryData.dll": {}
+          "bin/placeholder/Library.Data.dll": {}
         }
       },
-      "LibraryServices/1.0.0": {
+      "Library.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "LibraryData": "1.0.0"
+          "Library.Data": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/LibraryServices.dll": {}
+          "bin/placeholder/Library.Services.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LibraryServices.dll": {}
+          "bin/placeholder/Library.Services.dll": {}
         }
       }
     }
@@ -8219,21 +8219,21 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "LibraryData/1.0.0": {
+    "Library.Data/1.0.0": {
       "type": "project",
-      "path": "../LibraryData/LibraryData.csproj",
-      "msbuildProject": "../LibraryData/LibraryData.csproj"
+      "path": "../LibraryData/Library.Data.csproj",
+      "msbuildProject": "../LibraryData/Library.Data.csproj"
     },
-    "LibraryServices/1.0.0": {
+    "Library.Services/1.0.0": {
       "type": "project",
-      "path": "../LibraryServices/LibraryServices.csproj",
-      "msbuildProject": "../LibraryServices/LibraryServices.csproj"
+      "path": "../LibraryServices/Library.Services.csproj",
+      "msbuildProject": "../LibraryServices/Library.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "LibraryData >= 1.0.0",
-      "LibraryServices >= 1.0.0",
+      "Library.Data >= 1.0.0",
+      "Library.Services >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.3",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.3",
@@ -8266,11 +8266,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj": {
-              "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj"
+            "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj": {
+              "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj"
             },
-            "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\LibraryServices.csproj": {
-              "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\LibraryServices.csproj"
+            "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj": {
+              "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj"
             }
           }
         }

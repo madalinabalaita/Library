@@ -1,11 +1,11 @@
-﻿using LibraryData;
-using LibraryData.Models;
+﻿using Library.Data;
+using Library.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
 
-namespace LibraryServices
+namespace Library.Services
 {
    public class MemberService : IMember
     {

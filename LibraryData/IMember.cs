@@ -1,8 +1,8 @@
-﻿using LibraryData.Models;
+﻿using Library.Data.Models;
 using System.Collections.Generic;
 
 
-namespace LibraryData
+namespace Library.Data
 {
    public interface IMember
     {

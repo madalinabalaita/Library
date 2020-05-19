@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibraryData.Models
+namespace Library.Data.Models
 {
     public class Member
     {

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 
-namespace LibraryData.Models
+namespace Library.Data.Models
 {
    public class Book:LibraryItem
     {

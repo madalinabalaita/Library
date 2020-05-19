@@ -1253,7 +1253,7 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "LibraryData/1.0.0": {
+      "Library.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -1261,10 +1261,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3"
         },
         "compile": {
-          "bin/placeholder/LibraryData.dll": {}
+          "bin/placeholder/Library.Data.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LibraryData.dll": {}
+          "bin/placeholder/Library.Data.dll": {}
         }
       }
     }
@@ -4932,15 +4932,15 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "LibraryData/1.0.0": {
+    "Library.Data/1.0.0": {
       "type": "project",
-      "path": "../LibraryData/LibraryData.csproj",
-      "msbuildProject": "../LibraryData/LibraryData.csproj"
+      "path": "../LibraryData/Library.Data.csproj",
+      "msbuildProject": "../LibraryData/Library.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "LibraryData >= 1.0.0"
+      "Library.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4949,9 +4949,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\LibraryServices.csproj",
-      "projectName": "LibraryServices",
-      "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\LibraryServices.csproj",
+      "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj",
+      "projectName": "Library.Services",
+      "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj",
       "packagesPath": "C:\\Users\\Madalina\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\obj\\",
       "projectStyle": "PackageReference",
@@ -4969,8 +4969,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj": {
-              "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\LibraryData.csproj"
+            "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj": {
+              "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj"
             }
           }
         }
