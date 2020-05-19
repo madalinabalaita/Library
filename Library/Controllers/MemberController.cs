@@ -1,11 +1,11 @@
-﻿using Library.Models.Member;
+﻿using Library.Web.Models.Member;
 using Library.Data;
 using Library.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Library.Controllers
+namespace Library.Web.Controllers
 {
     public class MemberController : Controller
     {

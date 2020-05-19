@@ -30,11 +30,11 @@
               "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj": {
                 "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj"
               },
-              "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj": {
-                "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj"
+              "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj": {
+                "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj"
               },
-              "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.csproj": {
-                "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.csproj"
+              "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.Web.csproj": {
+                "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.Web.csproj"
               }
             }
           }
@@ -159,12 +159,12 @@
         }
       }
     },
-    "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj": {
+    "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj",
-        "projectName": "Library.Services",
-        "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj",
+        "projectName": "Library.Core.Services",
+        "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj",
         "packagesPath": "C:\\Users\\Madalina\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\obj\\",
         "projectStyle": "PackageReference",
@@ -215,12 +215,12 @@
         }
       }
     },
-    "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.csproj": {
+    "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.csproj",
-        "projectName": "Library",
-        "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.csproj",
+        "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.Web.csproj",
+        "projectName": "Library.Web",
+        "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.Web.csproj",
         "packagesPath": "C:\\Users\\Madalina\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\obj\\",
         "projectStyle": "PackageReference",
@@ -241,8 +241,8 @@
               "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj": {
                 "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj"
               },
-              "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj": {
-                "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj"
+              "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj": {
+                "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj"
               }
             }
           }

@@ -1,4 +1,4 @@
-﻿namespace Library.Models.Collection
+﻿namespace Library.Web.Models.Collection
 {
     public class ItemIndexListingModel
     {

@@ -1,7 +1,7 @@
 ﻿using Library.Data.Models;
 using System.Collections.Generic;
 
-namespace Library.Models.Collection
+namespace Library.Web.Models.Collection
 {
     public class ItemDetailModel
     {

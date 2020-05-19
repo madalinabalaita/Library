@@ -2875,25 +2875,18 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Library/1.0.0": {
+      "Library.Core.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Library.Data": "1.0.0",
-          "Library.Services": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "3.1.3",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.2"
+          "Library.Data": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Library.dll": {}
+          "bin/placeholder/Library.Core.Services.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Library.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+          "bin/placeholder/Library.Core.Services.dll": {}
+        }
       },
       "Library.Data/1.0.0": {
         "type": "project",
@@ -2909,18 +2902,25 @@
           "bin/placeholder/Library.Data.dll": {}
         }
       },
-      "Library.Services/1.0.0": {
+      "Library.Web/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Library.Data": "1.0.0"
+          "Library.Core.Services": "1.0.0",
+          "Library.Data": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "3.1.3",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.2"
         },
         "compile": {
-          "bin/placeholder/Library.Services.dll": {}
+          "bin/placeholder/Library.Web.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Library.Services.dll": {}
-        }
+          "bin/placeholder/Library.Web.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -9262,27 +9262,27 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Library/1.0.0": {
+    "Library.Core.Services/1.0.0": {
       "type": "project",
-      "path": "../Library/Library.csproj",
-      "msbuildProject": "../Library/Library.csproj"
+      "path": "../LibraryServices/Library.Core.Services.csproj",
+      "msbuildProject": "../LibraryServices/Library.Core.Services.csproj"
     },
     "Library.Data/1.0.0": {
       "type": "project",
       "path": "../LibraryData/Library.Data.csproj",
       "msbuildProject": "../LibraryData/Library.Data.csproj"
     },
-    "Library.Services/1.0.0": {
+    "Library.Web/1.0.0": {
       "type": "project",
-      "path": "../LibraryServices/Library.Services.csproj",
-      "msbuildProject": "../LibraryServices/Library.Services.csproj"
+      "path": "../Library/Library.Web.csproj",
+      "msbuildProject": "../Library/Library.Web.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Library >= 1.0.0",
+      "Library.Core.Services >= 1.0.0",
       "Library.Data >= 1.0.0",
-      "Library.Services >= 1.0.0",
+      "Library.Web >= 1.0.0",
       "MSTest.TestAdapter >= 2.1.0",
       "MSTest.TestFramework >= 2.1.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
@@ -9319,11 +9319,11 @@
             "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj": {
               "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryData\\Library.Data.csproj"
             },
-            "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj": {
-              "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj"
+            "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj": {
+              "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj"
             },
-            "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.csproj": {
-              "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.csproj"
+            "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.Web.csproj": {
+              "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.Web.csproj"
             }
           }
         }

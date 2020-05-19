@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Library.Models.Member
+namespace Library.Web.Models.Member
 {
     public class MemberDetailModel
     {

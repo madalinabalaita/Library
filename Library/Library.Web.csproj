@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LibraryData\Library.Data.csproj" />
-    <ProjectReference Include="..\LibraryServices\Library.Services.csproj" />
+    <ProjectReference Include="..\LibraryServices\Library.Core.Services.csproj" />
   </ItemGroup>
 
 </Project>

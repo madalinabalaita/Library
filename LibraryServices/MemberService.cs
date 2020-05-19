@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace Library.Services
+namespace Library.Core.Services
 {
    public class MemberService : IMember
     {

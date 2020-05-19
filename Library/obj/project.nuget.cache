@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l0ZpW11dhWRZzB53BS5POnEyUfdZ2AOdWSS+i+74zT09Kvf+LlUpmemdgQCg68/KjVoFn5hY8eqGTssNuB6MSg==",
+  "dgSpecHash": "ZQ1L/w4M6DQ/0VRBMB7HmeboGiS2fVNM+bBL+k47yW/W05jvEPTNUAELK7Yd0zqFMt4+/bEKx/tvfKA9vQpFWw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.csproj",
+  "projectFilePath": "C:\\Users\\Madalina\\source\\repos\\Library\\Library\\Library.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Madalina\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Madalina\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

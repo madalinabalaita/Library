@@ -1,4 +1,4 @@
-﻿namespace Library.Models.BorrowModel
+﻿namespace Library.Web.Models.BorrowModel
 {
     public class BorrowModel
     {

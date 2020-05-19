@@ -1,11 +1,11 @@
-﻿using Library.Models.BorrowModel;
-using Library.Models.Collection;
+﻿using Library.Web.Models.BorrowModel;
+using Library.Web.Models.Collection;
 using Library.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 
-namespace Library.Controllers
+namespace Library.Web.Controllers
 {
     public class CollectionController : Controller
     {

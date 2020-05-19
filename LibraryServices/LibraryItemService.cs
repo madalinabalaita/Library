@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 using System.Threading.Tasks;
 
-namespace Library.Services
+namespace Library.Core.Services
 {
     public class LibraryItemService : ILibraryItem
     {

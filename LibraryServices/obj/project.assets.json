@@ -4949,9 +4949,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj",
-      "projectName": "Library.Services",
-      "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Services.csproj",
+      "projectUniqueName": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj",
+      "projectName": "Library.Core.Services",
+      "projectPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\Library.Core.Services.csproj",
       "packagesPath": "C:\\Users\\Madalina\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Madalina\\source\\repos\\Library\\LibraryServices\\obj\\",
       "projectStyle": "PackageReference",

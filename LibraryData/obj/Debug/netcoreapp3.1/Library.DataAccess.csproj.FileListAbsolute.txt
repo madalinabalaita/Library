@@ -1,0 +1,4 @@
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.DataAccess.csprojAssemblyReference.cache
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Madalina\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\Library.DataAccess.AssemblyInfo.cs

@@ -1,9 +1,9 @@
-﻿using Library.Models.Collection;
+﻿using Library.Web.Models.Collection;
 using Library.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Library.Controllers
+namespace Library.Web.Controllers
 {
     public class SearchController:Controller
     {
