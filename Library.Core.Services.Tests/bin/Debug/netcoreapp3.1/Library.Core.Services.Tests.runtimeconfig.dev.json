@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Madalina\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Madalina\\.nuget\\packages"
+    ]
+  }
+}
