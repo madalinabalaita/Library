@@ -105,7 +105,7 @@ namespace Library.Core.Services
             }
 
             var results = _context.Query<LibraryItem>()
-                .Where(c => c.Title.Contains(searchTerm))
+                .Where(c=> c.Title.Contains(searchTerm))
                 .ToArray() as IEnumerable<LibraryItem>;
 
             return Task.FromResult(results);
