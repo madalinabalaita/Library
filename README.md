@@ -9,7 +9,7 @@ Library management system built in ASP.NET Core 3.1  with books from my own shel
 The database is the following:
 ![db](https://user-images.githubusercontent.com/61286310/81499725-50887c00-92d6-11ea-9b5e-65b6250d0e8b.png)
 <br/>
-This project was meant to be the menagement of a Library which contains the members of the library and the items, as books and movies.
+This project was meant to be the management of a Library which contains the members of the library and the items, as books and movies.
 <br/>
 In the opening of the project you will find the button to view the collection of items or the list of members.
 ![1](https://user-images.githubusercontent.com/61286310/82140255-4ebf3b00-9837-11ea-97be-44f5d1e9036b.gif)
