@@ -50,6 +50,8 @@ namespace Library.Web.Controllers
             {
                 HoldPlaced=__borrow.GetCurrentHoldPlaced(h.Id).ToString("d"),
                 MemberName=__borrow.GetCurrentHoldMemberName(h.Id)
+              
+                
             });
             var model = new ItemDetailModel
             {
@@ -85,6 +87,7 @@ namespace Library.Web.Controllers
                 Title = item.Title,
                 LibrarySubscriptionId = "",
                 IsBorrowed = __borrow.IsBorrowed(id)
+
             };
             return View(model);
         }

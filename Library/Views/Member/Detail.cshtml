@@ -16,6 +16,7 @@
                    
                     <h2 style="color:#660033;">@Model.FirstName @Model.LastName</h2>
                     <div class="memberContact">
+                        <div id="memberDateOfBirth"><span style="font-weight:bold">Date of birth:</span> @Model.DateOfBirth</div>
                         <div id="memberGender"><span style="font-weight:bold">Gender:</span> @Model.Gender</div>
                         <div id="memberSubscription"><span style="font-weight:bold">Library Subscription ID :</span> @Model.LibrarySubscriptionId</div>
                         <div id="memberAddress"><span style="font-weight:bold">Address :</span> @Model.Address</div>
@@ -27,7 +28,7 @@
                         }
                         else
                         {
-                            <div id="memberNoFees"  style="color:#00cc00">No Fees.</div>
+                            <div id="memberNoFees" style="color:#00cc00">No Fees.</div>
                         }
                     </div>
                 </div>

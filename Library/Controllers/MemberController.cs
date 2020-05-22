@@ -41,7 +41,8 @@ namespace Library.Web.Controllers
                 FirstName = member.FirstName,
                 LastName = member.LastName,
                 Address = member.Address,
-                MemberSince = member.LibrarySubscription.Created,
+                MemberSince = member.LibrarySubscription.Created.ToString("dd/MM/yyyy"),
+                DateOfBirth=member.DateOfBirth.ToString("dd/MM/yyyy"),
                 OverdueFees = member.LibrarySubscription.Fees,
                 LibrarySubscriptionId = member.LibrarySubscription.Id,
                 Phone = member.PhoneNr,
@@ -50,6 +51,7 @@ namespace Library.Web.Controllers
                 Holds = _member.GetHolds(id),
                 Gender = member.Gender,
                 ImageUrl=member.ImageUrl
+                
             };
             return View(model);
         }

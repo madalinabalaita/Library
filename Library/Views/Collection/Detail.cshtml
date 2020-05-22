@@ -293,11 +293,12 @@
             <tbody>
                 @foreach (var hold in @Model.CurrentHolds)
                 {
-                    <tr bgcolor="#f6eeee">
-                        <td>@hold.HoldPlaced</td>
+                <tr bgcolor="#f6eeee">
+                    <td>@hold.HoldPlaced</td>
 
-                        <td>@hold.MemberName</td>
-                    </tr>
+                    <td>@hold.MemberName</td>
+                   
+                </tr>
                 }
             </tbody>
         </table>

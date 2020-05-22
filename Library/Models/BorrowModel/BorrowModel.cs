@@ -7,6 +7,7 @@
 
         public bool IsBorrowed { get; set; }
 
+      
         public string LibrarySubscriptionId { get; set; }
         public string Title { get; set; }
         public string ImageUrl { get; set; }

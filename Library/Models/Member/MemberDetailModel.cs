@@ -25,10 +25,8 @@ namespace Library.Web.Models.Member
         public string Gender { get; set; }
         public string Phone { get; set; }
         public string ImageUrl { get; set; }
-       
-
-        public DateTime MemberSince { get; set; }
-
+        public string MemberSince { get; set; }
+        public string DateOfBirth { get; set; }
 
         public IEnumerable<Borrow> ItemsBorrowed { get; set; }
         public IEnumerable<BorrowHistory> BorrowHistory { get; set; }

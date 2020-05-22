@@ -4,5 +4,6 @@
     {
         public string MemberName { get; set; }
         public string HoldPlaced { get; set; }
+       
     }
 }
