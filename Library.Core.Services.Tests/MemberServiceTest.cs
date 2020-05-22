@@ -45,19 +45,5 @@ namespace Library.Core.Services.Tests
                 }
             };
         }
-        [Test]
-        public void Add_Member()
-        {
-            var mock = new Mock<DbSet<Member>>();
-            var mockContext = new Mock<LibraryDbContext>();
-
-            mockContext.Setup(m => m.Members).Returns(mock.Object);
-            var s = new MemberService(mockContext.Object);
-
-            s.Add(new Member());
-
-            mockContext.Verify(s=>s.Add(It.IsAny<Member>()),Times.Once());
-            mockContext.Verify(c => c.SaveChanges(), Times.Once());
-        }
     }
 }
