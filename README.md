@@ -40,6 +40,6 @@ As we click the search bar and search for an item the item will show up , as wel
 ![5](https://user-images.githubusercontent.com/61286310/82140824-34d32780-983a-11ea-821c-9abe6277b758.gif)
 <br/>
 <br>
-* The Library can check the members profiles by clicking on the "View Members". There, the names, the subscription Id and fees are shown. If clicked on the profile it can be seen a picture of the member and more details about him, as date of birth, address, phone number, gender etc.<br/>
+* The Library can check the members profiles by clicking on the "View Members". There, the names, the subscription Id and fees are shown. If clicked on the profile it can be seen a picture of the member and more details about him, as date of birth, address, phone number, gender etc. As well as the current holds and lendt items.<br/>
 ![6](https://user-images.githubusercontent.com/61286310/82639111-be0aa580-9c10-11ea-8b85-c0a0b3f25970.gif)
 <br/>
