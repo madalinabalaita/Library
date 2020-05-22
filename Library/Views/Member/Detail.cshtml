@@ -43,13 +43,13 @@
                             @foreach (var borrowed in Model.ItemsBorrowed)
                             {
                             <li>
-                                ID: @borrowed.LibraryItem.Id - Title:<span style="font-weight:bold"> @borrowed.LibraryItem.Title</span>
+                                ID: @borrowed.LibraryItem.Id - Title: <span style="font-weight:bold"> @borrowed.LibraryItem.Title</span>
                                     <ul>
                                          <li>
-                                                  <span style="font-weight:bold">Since:</span>@borrowed.Since
+                                                  <span style="font-weight:bold">Since: </span>@borrowed.Since
                                          </li>
                                     <li>
-                                    <span style="font-weight:bold">Until:</span>@borrowed.Until
+                                    <span style="font-weight:bold">Until: </span>@borrowed.Until
                                      </li>
                                     </ul>
                             </li>
