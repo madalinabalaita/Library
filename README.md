@@ -17,13 +17,13 @@ In the opening of the project you will find the button to view the collection of
 
 By clicking on the View Collection two tables will show.
 * One for Books, with the book cover, title, athor, genre, number and a view button. 
-* Another one for movies with the movie poster, title, director, genre and a view button.<br/>
-Once the view button it's clicked, a bigger image of the item will appear, title, author or director, type of the item , genre, a small important phrase from a book/movie, a borrow button, a lost button and a table with ISBN, Dewey Number (only for books), Number of pages/Lenght of the Movie in minutes and the price of replacement if lost.A well as the mark lost/ found button, borrow/return button, hold if borrow, borrowed history, on hold history.
-
+* Another one for movies with the movie poster, title, director, genre and a view button.
 ![2](https://user-images.githubusercontent.com/61286310/82140519-bc6b6700-9837-11ea-9e6f-d775b0dc29a3.gif)
 
 <br/>
-* As we click the search bar and search for an item the item will show up , as well as the view button found in the collection section.
+Once the view button it's clicked, a bigger image of the item will appear, title, author or director, type of the item , genre, a small important phrase from a book/movie, a borrow button, a lost button and a table with ISBN, Dewey Number (only for books), Number of pages/Lenght of the Movie in minutes and the price of replacement if lost.A well as the mark lost/ found button, borrow/return button, hold if borrow, borrowed history, on hold history.
+
+As we click the search bar and search for an item the item will show up , as well as the view button found in the collection section.
 
 ![3](https://user-images.githubusercontent.com/61286310/82140646-ecffd080-9838-11ea-9837-1acb8f46ab75.gif)
 
