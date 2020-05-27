@@ -15,8 +15,6 @@ namespace Library.Web.Models.Collection
             Results = Enumerable.Empty<LibraryItem>();
         }
 
-        
-
         public IEnumerable<LibraryItem> Results { get; internal set; }
     }
 }

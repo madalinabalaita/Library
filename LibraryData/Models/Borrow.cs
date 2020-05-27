@@ -8,7 +8,7 @@ namespace Library.Data.Models
     {
         public int Id { get; set; }
 
-        //book/movie/magazine
+        //book/movie
         [Required]
         public LibraryItem LibraryItem { get; set; }
         //the library subscription of a member

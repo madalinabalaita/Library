@@ -42,7 +42,7 @@ namespace Library.Core.Services
         }
 
         public IEnumerable<Borrow> GetBorrows(int memberID)
-        {//Get(memberId).LibrarySubscription.Id
+        {   //Get(memberId).LibrarySubscription.Id
             var subscriptionID = _context.Members.Include(m => m.LibrarySubscription)
                 .FirstOrDefault(m => m.Id == memberID)
                 .LibrarySubscription.Id;
@@ -52,7 +52,7 @@ namespace Library.Core.Services
         }
 
         public IEnumerable<Hold> GetHolds(int memberID)
-        {
+        {   //Get(memberId).LibrarySubscription.Id
             var subscriptionID = _context.Members.Include(m => m.LibrarySubscription)
                 .FirstOrDefault(m => m.Id == memberID)
                 .LibrarySubscription.Id;

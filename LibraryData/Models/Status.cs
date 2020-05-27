@@ -10,7 +10,7 @@ namespace Library.Data.Models
         [Required]
         public string Name { get; set; }
 
-        //about the item
+        //about the item : Available/Borrowed/On hold/Lost
         [Required]
         public string About { get; set; }
     }

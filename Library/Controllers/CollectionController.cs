@@ -47,7 +47,7 @@ namespace Library.Web.Controllers
         {
             var item = _items.GetById(id);
             var currentHolds = __borrow.GetCurrentHolds(id).Select(h => new ItemHoldModel
-            {
+            {   //d  Format Specifier-01.10.2008
                 HoldPlaced=__borrow.GetCurrentHoldPlaced(h.Id).ToString("d"),
                 MemberName=__borrow.GetCurrentHoldMemberName(h.Id)
               

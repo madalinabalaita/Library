@@ -69,7 +69,7 @@ namespace Library.Core.Services
         private void CloseExistingBorrowHistory(int itemId,DateTime now)
         {    //close any existing borrow history
 
-            //the item which has beend brrowed but not yet returned
+            //the item which has beend borrowed but not yet returned
             var history = _context.BorrowHistories.FirstOrDefault(h => h.LibraryItem.Id == itemId && h.Returned == null);
             //if returned, update and the time of the return is now
             if (history != null)

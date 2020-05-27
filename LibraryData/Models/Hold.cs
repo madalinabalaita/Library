@@ -7,10 +7,10 @@ namespace Library.Data.Models
     {
         public int Id { get; set; }
 
-        //item to hold, virtual-when you want to load a collection form the database the first time it is accesed
+        //item to hold, virtual-when you want to load a collection from the database the first time it is accesed
         public virtual LibraryItem LibraryItem { get; set; }
 
-        //meber who wants to hold an item
+        //member (its subscription) who wants to hold an item
         public virtual LibrarySubscription LibrarySubscription { get; set; }
 
 
