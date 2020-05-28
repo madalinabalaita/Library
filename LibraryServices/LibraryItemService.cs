@@ -22,7 +22,7 @@ namespace Library.Core.Services
         }
 
         public IEnumerable<LibraryItem> GetAll()
-        {//when we pull back LibraryItems include the status of the item and its location
+        {//when we pull back LibraryItems include the status of the item 
             return _context.LibraryItems
                 .Include(item => item.Status);
                 

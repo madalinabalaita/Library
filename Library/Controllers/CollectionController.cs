@@ -85,7 +85,7 @@ namespace Library.Web.Controllers
                 ItemId = id,
                 ImageUrl = item.ImageUrl,
                 Title = item.Title,
-                LibrarySubscriptionId = "",
+                LibrarySubscriptionId ="",
                 IsBorrowed = __borrow.IsBorrowed(id)
 
             };

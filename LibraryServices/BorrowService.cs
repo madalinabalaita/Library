@@ -69,8 +69,8 @@ namespace Library.Core.Services
         private void CloseExistingBorrowHistory(int itemId,DateTime now)
         {    //close any existing borrow history
 
-            //the item which has beend borrowed but not yet returned
-            var history = _context.BorrowHistories.FirstOrDefault(h => h.LibraryItem.Id == itemId && h.Returned == null);
+            var history = _context.BorrowHistories
+                .FirstOrDefault(h => h.LibraryItem.Id == itemId && h.Returned == null);
             //if returned, update and the time of the return is now
             if (history != null)
             {
@@ -136,7 +136,9 @@ namespace Library.Core.Services
             var item = _context.LibraryItems.FirstOrDefault(i => i.Id == itemId);
             //we update the item to borrowed
             UpdateItemStatus(itemId, "Borrowed");
-            var librarySubscription = _context.LibrarySubscriptions.Include(s => s.Borrows).FirstOrDefault(s=>s.Id== librarySubscriptionId);
+            var librarySubscription = _context.LibrarySubscriptions
+                .Include(s => s.Borrows)
+                .FirstOrDefault(s=>s.Id== librarySubscriptionId);
             //we create a Borrow  with the Library Item borrowed, Subscription, Date of borrow and the Due Date
             var borrow = new Borrow
             {
@@ -197,19 +199,25 @@ namespace Library.Core.Services
 
         public string GetCurrentHoldMemberName(int id)
         {
-            var hold = _context.Holds.Include(h => h.LibraryItem).Include(h => h.LibrarySubscription).FirstOrDefault(h => h.Id == id);
+            var hold = _context.Holds
+                .Include(h => h.LibraryItem)
+                .Include(h => h.LibrarySubscription)
+                .FirstOrDefault(h => h.Id == id);
             //if it's null also the name will be
             var subscriptionId = hold?.LibrarySubscription.Id;
 
-            var member = _context.Members.Include(m => m.LibrarySubscription).FirstOrDefault(m => m.LibrarySubscription.Id == subscriptionId);
-            //if it is not null we retorn the first name and the last name
+            var member = _context.Members
+                .Include(m => m.LibrarySubscription)
+                .FirstOrDefault(m => m.LibrarySubscription.Id == subscriptionId);
+            //if it is not null we return the first name and the last name
             return member?.FirstName + " " + member?.LastName;
 
         }
 
         public DateTime GetCurrentHoldPlaced(int id)
         {
-            var hold = _context.Holds.Include(h => h.LibraryItem)
+            var hold = _context.Holds
+                .Include(h => h.LibraryItem)
                 .Include(h => h.LibrarySubscription)
                 .FirstOrDefault(h => h.Id == id)
                 .HoldPlaced;
@@ -265,11 +273,9 @@ namespace Library.Core.Services
                 .FirstOrDefault(a => a.LibraryItem.Id == id);
             if (checkout != null) _context.Remove(checkout);
 
-            // close any existing borroed history
+            // close any existing borrowed history
             var history = _context.BorrowHistories
-                .FirstOrDefault(h =>
-                    h.LibraryItem.Id == id
-                    && h.Borrowed == null);
+                .FirstOrDefault(h =>h.LibraryItem.Id == id && h.Borrowed == null);
             if (history != null)
             {
                 _context.Update(history);
